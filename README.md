@@ -41,6 +41,8 @@
 <td>02/03/2026</td>
 <td>Seg</td>
 <td><ul>
+  <li><a href="https://forms.gle/3Mb2sA85xd71FcmC7">Questionário de início de semestre.</a></li>
+
 <li>Apresentação da disciplina.</li>
 <li>
 Dinâmica de acolhimento da turma.</li>
@@ -364,7 +366,7 @@ Primeiro bimestre:
 
 - Prova de leitura/escrita de código (peso 5): 29/04
 - Apresentação de exercícios (peso 2)
-- Produção individual personalizada(peso 3)
+- Produção individual personalizada (peso 3)
 
 Segundo bimestre:
 
