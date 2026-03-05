@@ -54,7 +54,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>04/03/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Visão geral dos paradigmas de programação.</li>
+<li>Linguagens e paradigmas de programação: <a href="classes/02">atividade em grupo sobre compreensão de código.</a></li>
 </ul></td>
 </tr>
 
@@ -63,7 +63,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>09/03/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação funcional (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/03/README.md">Primeiro contato com a programação funcional em Haskell:</a> aplicando e definindo funções simples, funções tipadas, listas, funções de alta ordem (higher order), prática haskell01 no GitHub Codespaces.</li>
+<li>Apresentação de exercícios (interpretador/compilador): <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Davi</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Guilherme M.</a></li>
 </ul></td>
 </tr>
 
