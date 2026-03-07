@@ -95,7 +95,7 @@ Em nuvem (online)
 ### Crie seu ambiente para esta aula
 
 - Nossas práticas em Haskell serão no GitHub Codespaces.
-- Para criar seu repositório com os arquivos desta prática, acesse https://classroom.github.com/a/oYbNzGLV
+- Para criar seu repositório com os arquivos desta prática, acesse https://classroom.github.com/a/FcjAh3Gp
 
 ## Aplicando funções pré-definidas
 
