@@ -1,0 +1,209 @@
+
+/* 
+.lia-paragraph,
+.lia-list,
+li,
+p {
+  font-family: 'Quattrocento Sans', sans-serif !important;
+}
+
+li::marker {
+  color: #ffcd00 !important;
+}
+ */
+
+/* /* body {
+  font-family: 'Quattrocento Sans', sans-serif !important;
+} */
+
+.lia-code--inline {
+  border: none !important;
+  box-shadow: none !important;
+  background: rgba(0,0,0,0.05) !important;
+  padding: 0.1em 0.35em !important;
+  border-radius: 4px !important;
+  font-size: 0.92em !important;
+}
+
+.lia-bold,
+strong {
+  background: #ffcd00 !important;
+  padding: 0.05em 0.25em !important;
+  border-radius: 3px !important;
+  color: #000 !important;
+}
+
+/* Hide ACE gutter (line numbers) only for marked blocks */
+
+/* Remove ACE line numbers globally */
+
+.ace_gutter {
+  display: none !important;
+}
+
+.ace_scroller {
+  left: 0 !important;
+}
+
+.ace_content {
+  margin-left: 0 !important;
+}
+
+
+/* Remove responsive voice */
+
+
+.lia-responsive-voice,
+.lia-responsive-voice * {
+  display: none !important;
+}
+
+
+@keyframes lia-pulse {
+  0%   { transform: scale(1); opacity: 0.9; }
+  50%  { transform: scale(1.5); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+.icon-compile-circle {
+  animation: lia-pulse 1.6s infinite !important;
+}
+
+/* First-level bullets */
+/* li::marker {
+  font-size: 2.0em !important; 
+  color: #ffcd00 !important;
+} */
+
+/* Second-level bullets */
+/* ul ul li::marker {
+  font-size: 1.1em !important;
+} */
+
+/* Third-level bullets */
+/* ul ul ul li::marker {
+  font-size: 0.95em !important;
+} */
+
+/* li {
+  margin: 0.25em 0 !important;
+} */
+
+/* ul {
+  list-style-type: disc !important;
+}
+
+ul ul {
+  list-style-type: circle !important;
+}
+
+ul ul ul {
+  list-style-type: square !important;
+} */
+
+
+/* 
+.lia-h1,
+.lia-h2,
+.lia-h3,
+.lia-h4,
+h1, h2, h3, h4 {
+  font-family: 'Lora', serif !important;
+  font-weight: 700 !important;
+  color: #222222 !important; 
+  line-height: 1.15 !important;
+} */
+
+
+
+
+
+
+
+
+
+/* h1.lia-h1 {
+  font-size:5vw !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+} */
+
+/* #lia-spacer-right {
+  background-image: url("https://liascript.github.io/img/logo.png") !important;
+  background-position: center !important;
+  background-size: 36px !important;
+  background-repeat: no-repeat !important;
+} */
+
+/* .lia-font-scale-3  {
+  
+  font-size: 24px !important;
+  --font-size-multiplier: 1 !important;
+  
+
+  
+}  */
+
+
+/* 
+
+.lia-paragraph {
+  font-size: 28px !important;
+}
+
+.lia-label {
+  font-size: 28px !important;
+} */
+
+
+/* 
+.lia-content{
+  background-image: url("https://liascript.github.io/img/logo.png") !important;
+  background-size: 200px !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+} */
+
+/* .lia-toolbar {
+  background: var(--main-bg-color) !important;
+} */
+
+/* .lia-btn {
+  background: var(--main-bg-color) !important;
+} */
+
+/* .lia-input {
+  background: var(--main-bg-color) !important;
+} */
+
+/* .lia-active {
+  background: var(--main-bg-color) !important;
+} */
+
+/* .lia-quote {
+  background: var(--main-bg-color) !important;
+  border-left-color: #990000 !important;
+  color: #FFFFFF !important
+} */
+
+/* .lia-accordion {
+  background: var(--main-bg-color) !important;
+  font-size: 12px !important;
+} */
+
+/* .lia-accordion-dummy {
+  background: var(--main-bg-color) !important;
+  font-size: 12px !important;
+} */
+
+/* .lia-quiz {
+  border-color: var(--main-bg-color) !important;
+} */
+
+/* .lia-link {
+  color: #00FF00 !important
+} */
+
+
+
+

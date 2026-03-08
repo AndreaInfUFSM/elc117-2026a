@@ -15,17 +15,298 @@ comment:  Material de apoio para a disciplina
 
 translation: English  translations/English.md
 
+link:     custom.css
+
+
+
 link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
+@onload
+window.CodeRunner = {
+    ws: undefined,
+    handler: {},
+    connected: false,
+    error: "",
+    url: "",
+    firstConnection: true,
 
+    init(url, step = 0) {
+        this.url = url
+        if (step  >= 10) {
+           console.warn("could not establish connection")
+           this.error = "could not establish connection to => " + url
+           return
+        }
+
+        this.ws = new WebSocket(url);
+
+        const self = this
+        
+        const connectionTimeout = setTimeout(() => {
+          self.ws.close();
+          console.log("WebSocket connection timed out");
+        }, 5000);
+        
+        
+        this.ws.onopen = function () {
+            clearTimeout(connectionTimeout);
+            self.log("connections established");
+
+            self.connected = true
+            
+            setInterval(function() {
+                self.ws.send("ping")
+            }, 15000);
+        }
+        this.ws.onmessage = function (e) {
+            // e.data contains received string.
+
+            let data
+            try {
+                data = JSON.parse(e.data)
+            } catch (e) {
+                self.warn("received message could not be handled =>", e.data)
+            }
+            if (data) {
+                self.handler[data.uid](data)
+            }
+        }
+        this.ws.onclose = function () {
+            clearTimeout(connectionTimeout);
+            self.connected = false
+            self.warn("connection closed ... reconnecting")
+
+            setTimeout(function(){
+                console.warn("....", step+1)
+                self.init(url, step+1)
+            }, 1000)
+        }
+        this.ws.onerror = function (e) {
+            clearTimeout(connectionTimeout);
+            self.warn("an error has occurred")
+        }
+    },
+    log(...args) {
+        window.console.log("CodeRunner:", ...args)
+    },
+    warn(...args) {
+        window.console.warn("CodeRunner:", ...args)
+    },
+    handle(uid, callback) {
+        this.handler[uid] = callback
+    },
+    send(uid, message, sender=null, restart=false) {
+        const self = this
+        if (this.connected) {
+          message.uid = uid
+          this.ws.send(JSON.stringify(message))
+        } else if (this.error) {
+
+          if(restart) {
+            sender.lia("LIA: terminal")
+            this.error = ""
+            this.init(this.url)
+            setTimeout(function() {
+              self.send(uid, message, sender, false)
+            }, 2000)
+
+          } else {
+            //sender.lia("LIA: wait")
+            setTimeout(() => {
+              sender.lia(" " + this.error)
+              sender.lia(" Maybe reloading fixes the problem ...")
+              sender.lia("LIA: stop")
+            }, 800)
+          }
+        } else {
+          setTimeout(function() {
+            self.send(uid, message, sender, false)
+          }, 2000)
+          
+          if (sender) {
+            
+            sender.lia("LIA: terminal")
+            if (this.firstConnection) {
+              this.firstConnection = false
+              setTimeout(() => { 
+                sender.log("stream", "", [" Waking up execution server ...\n", "This may take up to 30 seconds ...\n", "Please be patient ...\n"])
+              }, 100)
+            } else {
+              sender.log("stream", "", ".")
+            }
+            sender.lia("LIA: terminal")
+          }
+        }
+    }
+}
+
+//window.CodeRunner.init("wss://coderunner.informatik.tu-freiberg.de/")
+//window.CodeRunner.init("ws://localhost:4000/")
+window.CodeRunner.init("wss://ancient-hollows-41316.herokuapp.com/")
+@end
+
+@LIA.c:                 @LIA.eval(`["main.c"]`, `gcc -Wall main.c -o a.out`, `./a.out`)
+@LIA.haskell:           @LIA.eval(`["main.hs"]`, `ghc main.hs -o main`, `./main`)
+@LIA.haskell_withShell: @LIA.eval(`["main.hs"]`, `none`, `ghci main.hs`)
+
+
+@LIA.eval:  @LIA.eval_(false,`@0`,@1,@2,@3)
+
+@LIA.evalWithDebug: @LIA.eval_(true,`@0`,@1,@2,@3)
+
+@LIA.eval_
+<script>
+function random(len=16) {
+    let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let str = '';
+    for (let i = 0; i < len; i++) {
+        str += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return str;
+}
+
+
+
+const uid = random()
+var order = @1
+var files = []
+
+var pattern = "@4".trim()
+
+if (pattern.startsWith("\`")){
+  pattern = pattern.slice(1,-1)
+} else if (pattern.length === 2 && pattern[0] === "@") {
+  pattern = null
+}
+
+if (order[0])
+  files.push([order[0], `@'input(0)`])
+if (order[1])
+  files.push([order[1], `@'input(1)`])
+if (order[2])
+  files.push([order[2], `@'input(2)`])
+if (order[3])
+  files.push([order[3], `@'input(3)`])
+if (order[4])
+  files.push([order[4], `@'input(4)`])
+if (order[5])
+  files.push([order[5], `@'input(5)`])
+if (order[6])
+  files.push([order[6], `@'input(6)`])
+if (order[7])
+  files.push([order[7], `@'input(7)`])
+if (order[8])
+  files.push([order[8], `@'input(8)`])
+if (order[9])
+  files.push([order[9], `@'input(9)`])
+
+
+send.handle("input", (e) => {
+    CodeRunner.send(uid, {stdin: e}, send)
+})
+send.handle("stop",  (e) => {
+    CodeRunner.send(uid, {stop: true}, send)
+});
+
+
+CodeRunner.handle(uid, function (msg) {
+    switch (msg.service) {
+        case 'data': {
+            if (msg.ok) {
+                CodeRunner.send(uid, {compile: @2}, send)
+            }
+            else {
+                send.lia("LIA: stop")
+            }
+            break;
+        }
+        case 'compile': {
+            if (msg.ok) {
+                if (msg.message) {
+                    if (msg.problems.length)
+                        console.warn(msg.message);
+                    else
+                        console.log(msg.message);
+                }
+
+                send.lia("LIA: terminal")
+                CodeRunner.send(uid, {exec: @3, filter: pattern})
+
+                if(!@0) {
+                  console.clear()
+                }
+            } else {
+                send.lia(msg.message, msg.problems, false)
+                send.lia("LIA: stop")
+            }
+            break;
+        }
+        case 'stdout': {
+            if (msg.ok)
+                console.stream(msg.data)
+            else
+                console.error(msg.data);
+            break;
+        }
+
+        case 'stop': {
+            if (msg.error) {
+                console.error(msg.error);
+            }
+
+            if (msg.images) {
+                for(let i = 0; i < msg.images.length; i++) {
+                    console.html("<hr/>", msg.images[i].file)
+                    console.html("<img title='" + msg.images[i].file + "' src='" + msg.images[i].data + "' onclick='window.LIA.img.click(\"" + msg.images[i].data + "\")'>")
+                }
+            }
+
+            if (msg.videos) {
+                for(let i = 0; i < msg.videos.length; i++) {
+                    console.html("<hr/>", msg.videos[i].file)
+                    console.html("<video controls style='width:100%' title='" + msg.videos[i].file + "' src='" + msg.videos[i].data + "'></video>")
+                }
+            }
+
+            if (msg.files) {
+                let str = "<hr/>"
+                for(let i = 0; i < msg.files.length; i++) {
+                    str += `<a href='data:application/octet-stream${msg.files[i].data}' download="${msg.files[i].file}">${msg.files[i].file}</a> `
+                }
+
+                console.html(str)
+            }
+
+            window.console.warn(msg)
+
+            send.lia("LIA: stop")
+            break;
+        }
+
+        default:
+            console.log(msg)
+            break;
+    }
+})
+
+
+CodeRunner.send(
+    uid, { "data": files }, send, true
+);
+
+"LIA: wait"
+</script>
+@end
 
 -->
+
 
 <!--
 nvm use v14.21.1
 liascript-devserver --input README.md --port 3001 --live
+npx -p @liascript/devserver liascript-devserver --test --input ./README.md --live
 https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/master/classes/03/README.md
 -->
 
@@ -34,17 +315,17 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 # Programação Funcional em Haskell
 
 
+                          --{{0}}--
+Este material é parte de uma introdução à programação funcional em Haskell.
 
+                          --{{0}}--
+O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
 
-
-> Este material é uma introdução à **programação funcional** em Haskell.
->
-> O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
+Site oficial: https://www.haskell.org/
 
 
 ![Captura de tela de haskell.org, site oficial da linguagem Haskell. A página tem o logo da linguagem (inspirado na letra grega lambda, minúscula) no topo à esquerda, seguido de um exemplo de código no topo à direita. Abaixo disso, há um espaço interativo para teste de instruções da linguagem, seguido de uma seção de vídeos sobre Haskell.](img/haskellorg.png)
 
-Fonte: https://www.haskell.org/
 
 ## Highlights da linguagem
 
@@ -56,6 +337,9 @@ Alguns destaques da linguagem (contraste com C):
 - Suporta **listas nativamente** (estrutura/tipo de dado nativo)
 - Ambiente de execução: compilador e ambiente interpretador interativo (GHCi)
 
+### Linha do tempo
+
+> Que linguagens influenciaram o nascimento de Haskell?
 
 ![Gráfico representando uma linha do tempo da evolução de linguagens de programação. No eixo X, anos de 1954 a 2001. No eixo Y, famílias de linguagens de programação, com 30 linhas horizontais mostrando a evolução (versões) de linguagens de cada família. Algumas linguagens adicionais são mostradas como pontos por não terem descendentes. Linhas diagonais interligam linguagens que influenciaram / foram influenciadas por outras. Cores diferentes indicam linguagens ativas, extintas ou ameaçadas de extinção. Infelizmente, a imagem não está atualizada com linguagens que surgiram após 2001, mas serve para ilustrar a ideia de um ciclo de vida.](img/ComputerLanguagesChart-med.png)
 
@@ -65,37 +349,48 @@ Fonte: https://digibarn.com/collections/posters/tongues/
 
 ## Ambiente de execução
 
+Você pode:
 
-Para instalação local
-
-- Download oficial em https://www.haskell.org/downloads/
-- Compilador GHC, ambiente interativo GHCi, pacotes de bibliotecas, gerenciadores de dependência cabal / stack, etc.  
-- Pode ser assustador para iniciantes :-)
-
-
-Em nuvem (online)
-
-- Ambientes em nuvem que oferecem maior controle, com experiência próxima ao ambiente local: 
-
-  - [GitHub Codespaces](https://github.com/codespaces)
-  - [Play with Docker](https://labs.play-with-docker.com/)
-  - [Repl.it](https://replit.com)
-  - qualquer outro com livre acesso a containers
-
-- (Evite!) Ambientes simplificados que escondem interação com GHCi:
-
-  - https://www.jdoodle.com/execute-haskell-online
-  - https://onecompiler.com/haskell, 
-  - https://play.haskell.org/
-  - https://www.onlinegdb.com/online_haskell_compiler
-  - https://www.tutorialspoint.com/compile_haskell_online.php
-  
-
+- Instalar localmente
+- Usar Haskell em nuvem
 
 ### Crie seu ambiente para esta aula
 
 - Nossas práticas em Haskell serão no GitHub Codespaces.
 - Para criar seu repositório com os arquivos desta prática, acesse https://classroom.github.com/a/FcjAh3Gp
+
+### Instalação local
+
+- Download oficial em https://www.haskell.org/downloads/
+- Compilador GHC, ambiente interativo GHCi, pacotes de bibliotecas, gerenciadores de dependência cabal / stack, etc.  
+- Pode ser assustador para iniciantes :-)
+
+### Em nuvem (online)
+
+Ambientes em nuvem que oferecem maior controle, com experiência próxima ao ambiente local: 
+
+- [GitHub Codespaces](https://github.com/codespaces)
+- [Play with Docker](https://labs.play-with-docker.com/)
+- [Repl.it](https://replit.com)
+- qualquer outro com livre acesso a containers
+
+### Evite
+
+
+                          --{{0}}--
+Há vários ambientes online simplificados que expõem um editor e áreas de entrada e saída, mas não oferecem interação direta com o GHCi. Essa interação direta oferece mais oportunidades de aprendizado, por isso é melhor evitar esses ambientes simplificados.
+
+Evite usar ambientes simplificados que escondem interação com GHCi, mas dê uma olhada se tiver curiosidade :-)
+
+- https://www.jdoodle.com/execute-haskell-online
+- https://onecompiler.com/haskell
+- https://play.haskell.org/
+- https://www.onlinegdb.com/online_haskell_compiler
+- https://www.tutorialspoint.com/compile_haskell_online.php
+  
+
+
+
 
 ## Aplicando funções pré-definidas
 
@@ -155,16 +450,20 @@ Prelude> 4^2
 
 ### Teste outros exemplos
 
-> Você consegue descobrir o que fazem estas funções?
 
-
-Digite os exemplos 1 a 5, um de cada vez:
+``` haskell
+-- Clique abaixo para iniciar o GHCi
+-- Digite os exemplos 1 a 5, um de cada vez
+-- Qual será o resultado de cada um?
+```
+@LIA.haskell_withShell
 
 1. `min 9 8`
 2. `sqrt (max 9 8)`
 3. `min "abc" "def"`
 4. `min "abcdef" "def"`
 5. `length (min "abcd" "ab")`
+
 
 
 
@@ -198,37 +497,62 @@ Prelude> f 3.0
 
 
 
+
+
+
 ### Teste outros exemplos
 
-No GHCI, digite as seguintes definições:
-
-1. `soma x y = x + y`
-2. `hipotenusa c1 c2 = sqrt (c1^2+c2^2)`
-3. `isSpace c = c == ' '`
-
-Em seguida digite as seguintes aplicações das funções:
-
-1. `soma 8 9`
-2. `soma 3 1.5`
-3. `hipotenusa 2 4`
-4. `isSpace 'a'`
+``` haskell
+-- Clique abaixo para iniciar o GHCi
+-- Digite: soma x y = x + y
+-- Depois aplique a função digitando:
+-- soma 8 9
+-- soma 3 1.5
+```
+@LIA.haskell_withShell
 
 
 
-### Erros acontecem...
+#### Exemplo com função e operador
+
+``` haskell
+-- Clique abaixo para iniciar o GHCi
+-- Digite: hipotenusa c1 c2 = sqrt (c1^2+c2^2)
+-- Depois aplique a função digitando:
+-- hipotenusa 2 4
+```
+@LIA.haskell_withShell
 
 
-Digite as seguintes definições de funções:
+#### Exemplo com condição
 
-1. `inc x = x + 1`
-2. `plural word = word ++ "s"`
 
-Digite as seguintes aplicações das funções, que vão gerar erro!
+``` haskell
+-- Clique abaixo para iniciar o GHCi
+-- Digite: isSpace c = c == ' '
+-- Depois aplique a função digitando:
+-- isSpace 'a'
+```
+@LIA.haskell_withShell
 
-1. `inc "abcd"`
-2. `plural 2`
 
-> Você consegue identificar o motivo de cada erro?
+
+#### Erros acontecem...
+
+> Você consegue identificar o motivo dos erros?
+
+``` haskell 
+-- Digite as definições de funções:
+-- inc x = x + 1
+-- plural word = word ++ "s"
+-- Depois aplique as funções digitando:
+-- inc 2
+-- inc "abcd"
+-- plural "casa"
+-- plural 2
+```
+@LIA.haskell_withShell
+
 
 
 
@@ -439,7 +763,7 @@ main = do
   print (initial "Andrea")
   print (allInitials ["Fulano", "Beltrano"])
 ```
-
+@LIA.haskell
 
 ## Prática
 
