@@ -327,17 +327,38 @@ Site oficial: https://www.haskell.org/
 ![Captura de tela de haskell.org, site oficial da linguagem Haskell. A página tem o logo da linguagem (inspirado na letra grega lambda, minúscula) no topo à esquerda, seguido de um exemplo de código no topo à direita. Abaixo disso, há um espaço interativo para teste de instruções da linguagem, seguido de uma seção de vídeos sobre Haskell.](img/haskellorg.png)
 
 
+
+
 ## Highlights da linguagem
 
 Alguns destaques da linguagem (contraste com C):
 
+
+<div class="two-col--image-right">
+
+
+
+<div>
+
 - Criada em ~1987, vários autores, nome em homenagem a matemático Haskell Curry
 - Linguagem **puramente funcional** (funções sem efeitos colaterais, dados imutáveis)
-- Fortemente tipada, mas com **inferência** de tipos
+- Fortemente **tipada**, mas com **inferência** de tipos
 - Suporta **listas nativamente** (estrutura/tipo de dado nativo)
-- Ambiente de execução: compilador e ambiente interpretador interativo (GHCi)
+- Ambiente de execução: compilador e ambiente interpretador **interativo** (GHCi)
+</div>
 
-### Linha do tempo
+<div>
+
+![Haskell Logo](img/Haskell-Logo.svg.png)
+
+
+</div>
+
+</div>
+
+
+
+### Árvore genealógica
 
 > Que linguagens influenciaram o nascimento de Haskell?
 
@@ -370,8 +391,8 @@ Você pode:
 Ambientes em nuvem que oferecem maior controle, com experiência próxima ao ambiente local: 
 
 - [GitHub Codespaces](https://github.com/codespaces)
-- [Play with Docker](https://labs.play-with-docker.com/)
 - [Repl.it](https://replit.com)
+- [Outras alternativas](https://dev.to/bascodes/open-source-alternatives-to-github-codespaces-54e5)
 - qualquer outro com livre acesso a containers
 
 ### Evite

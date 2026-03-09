@@ -16,6 +16,85 @@ li::marker {
   font-family: 'Quattrocento Sans', sans-serif !important;
 } */
 
+
+
+/* Two-column slide layout */
+.two-col {
+  display: grid !important;
+  grid-template-columns: 0.7fr 1.3fr !important;
+  gap: 2rem !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+/* Variant with a narrower image column */
+.two-col--image-right {
+  display: grid !important;
+  grid-template-columns: 1.3fr 0.7fr !important;
+  gap: 2rem !important;
+  align-items: start !important;
+  width: 100% !important;
+}
+
+.two-col > div,
+.two-col--image-right > div {
+  min-width: 0 !important;
+}
+
+/* Image behavior */
+.two-col img,
+.two-col--image-right img {
+  display: block !important;
+  max-width: 100% !important;
+  max-height: 28vh !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  margin: 0 auto !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* List tuning inside columns */
+.two-col ul,
+.two-col--image-right ul {
+  margin: 0 !important;
+  padding-left: 1.1em !important;
+}
+
+.two-col li,
+.two-col--image-right li {
+  margin: 0.35em 0 !important;
+  line-height: 1.35 !important;
+}
+
+/* Optional visual alignment helpers */
+.col-top {
+  align-self: start !important;
+}
+
+.col-center {
+  align-self: center !important;
+}
+
+/* On narrower screens, stack */
+@media (max-width: 900px) {
+  .two-col,
+  .two-col--image-right {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  .two-col img,
+  .two-col--image-right img {
+    max-height: 40vh !important;
+  }
+}
+
+
+
+
+/* Remove borders and shadows from inline code, and add a subtle background */
 .lia-code--inline {
   border: none !important;
   box-shadow: none !important;
@@ -25,6 +104,7 @@ li::marker {
   font-size: 0.92em !important;
 }
 
+/* Highlight bold text with a background color and padding */
 .lia-bold,
 strong {
   background: #ffcd00 !important;
