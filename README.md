@@ -64,7 +64,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>Seg</td>
 <td><ul>
 <li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/03/README.md">Primeiro contato com a programação funcional em Haskell:</a> aplicando e definindo funções simples, funções tipadas, listas, funções de alta ordem (higher order), prática haskell01 no GitHub Codespaces.</li>
-<li>Apresentação de exercícios (interpretador/compilador): <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Davi</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Guilherme M.</a></li>
+<li>Apresentação de exercícios (interpretador/compilador): <a href="https://github.com/elc117/apresentacao-bim1-2026a-davi-p-libardoni">Davi</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-guigalmesh">Guilherme M.</a></li>
 </ul></td>
 </tr>
 
