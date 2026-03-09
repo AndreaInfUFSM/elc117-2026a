@@ -73,7 +73,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>11/03/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação funcional.</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/04/README.md">Fundamentos da programação funcional</a>: como a teoria se reflete nos códigos</li>
+<li>Apresentação de exercícios (efeitos colaterais e dados imutáveis): <a href="https://github.com/elc117/apresentacao-bim1-2026a-sofiatonetto">Sofia Valentina</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-guisdapi">Guilherme Dapieve</a></li>
 </ul></td>
 </tr>
 
