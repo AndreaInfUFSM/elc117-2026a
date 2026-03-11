@@ -341,42 +341,68 @@ A tabela neste slide faz um breve paralelo entre estes conceitos, incluindo link
 
 
 
-
-
-
 ### Programação imperativa
 
-- Programas formados por comandos que alteram o estado de variáveis
+
+              --{{0}}--
+A programação imperativa requer uma abstração próxima da arquitetura de von Neumann: dados na memória são transferidos para processamento pela CPU, programas operam sobre dados em variáveis.
+
+              --{{0}}--
+Usamos comandos para "dar ordens" ao computador, como no modo verbal imperativo da língua portuguesa. Os comandos detalham as ações que o computador deve executar para obter um resultado.
+
+
+<div class="two-col--image-right">
+
+<div>
+
+- Programas formados por comandos que:
+
+  - **alteram o estado** de variáveis
+  - expressam **como** o programa deve obter um resultado
 
 - Abstração próxima da [arquitetura de von Neumann](https://en.wikipedia.org/wiki/Von_Neumann_architecture)
 
-  - dados na memória são transferidos para processamento pela CPU
-  - programas operam sobre dados em variáveis
 
-- Usamos comandos para "dar ordens" ao computador, como no modo verbal imperativo da língua portuguesa
+</div>
 
-  - Comandos detalham as ações que o computador deve executar para obter um resultado
+<div>
 
-  - Ou seja: programação imperativa se concentra em "**como**" o programa deve obter um resultado
+![Arquitetura de Von Neumann](img/Von_Neumann_Architecture.svg.png)
 
 
+</div>
 
-- Exemplos: 
+</div>
 
-  - C e outras "clássicas" (mais antigas) como Fortran, Pascal, BASIC, etc.
-  - várias linguagens modernas e populares são predominantemente imperativas, embora multi-paradigma: Java, Python, JavaScript, C++, C#, Rust, etc.
+
+
+<details>
+
+<summary style="color:Grey;font-size: smaller">Clique para ver exemplos de linguagens</summary>
+
+São imperativas a linguagem C e outras "clássicas" (mais antigas) como Fortran, Pascal, BASIC, etc. Várias linguagens modernas e populares são predominantemente imperativas, embora multi-paradigma: Java, Python, JavaScript, C++, C#, Rust, etc.
+
+</details> 
 
   
 ### Programação declarativa
 
-- Programas descrevem o resultado que se deseja obter
+
+
+              --{{0}}--
+A programação declarativa em concentra mais em definir "**o quê**" se deseja obter, e menos em "como" obter o resultado desejado
+
+              --{{0}}--
+Detalhes de mais baixo nível (alocação, índices, percurso, etc.) ficam a cargo da implementação da linguagem (compiladores/interpretadores), não de quem programa.
+
+
+- Programas usam comandos que **descrevem** o resultado que se deseja obter
 
 - Abordagem de mais alto nível, mais distante da arquitetura
 
 - Sem detalhamento de todas ações que o computador deve executar 
   
-  - Ou seja, programação declarativa em concentra mais em definir "**o quê**" se deseja obter, e menos em "como" obter o resultado desejado
-  - Detalhes de mais baixo nível (alocação, índices, percurso, etc.) ficam a cargo da implementação da linguagem, não de quem programa
+
 
 - Exemplos:
 
@@ -998,7 +1024,7 @@ Descubra:
 </details> 
 
 <details>
-  <summary style="color:Grey;font-size: smaller">O que faz a função car?</summary>
+  <summary style="color:Grey;font-size: smaller">O que faz a função cdr?</summary>
   <p>Retorna o restante da lista, sem o primeiro (tail). Vem do inglês "Contents of the Decrement Register", um termo hoje pouco intuitivo, relacionado à implementação, que fazia sentido na época em que foi criado</p>
 </details> 
 
