@@ -83,7 +83,9 @@ Dinâmica de acolhimento da turma.</li>
 <td>16/03/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação funcional (lab).</li>
+<li>Continuação da prática haskell01 da aula 3 (ver link da prática nos slides)</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/05/README.md">Quizzes sobre programação funcional em Haskell</a></li>
+<li>Apresentação de exercícios (haskell01): <a href="https://github.com/elc117/apresentacao-bim1-2026a-laulugoch">Lauren</a>, <a href="https://github.com/elc117/apresentacao-bim1-2026a-HLKellermann">Helena</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-renatasfon">Renata</a> </li>
 </ul></td>
 </tr>
 
