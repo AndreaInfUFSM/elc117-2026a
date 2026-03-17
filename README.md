@@ -94,7 +94,9 @@ Dinâmica de acolhimento da turma.</li>
 <td>18/03/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação funcional.</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/06/README.md">Programação funcional em Haskell:</a> quiz e exemplo de programa completo</li>
+<li>Apresentação de exercícios (codeworld): <a href="https://github.com/elc117/apresentacao-bim1-2026a-samue345">Samuel S.</a></li>
+
 </ul></td>
 </tr>
 
