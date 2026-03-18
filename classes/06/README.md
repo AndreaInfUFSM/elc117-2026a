@@ -234,8 +234,38 @@ length (filter (== ' ') (quadrante (1,2) ++ listInfo [1,2,3]))
 - Texto das respostas foi pré-processado, mantendo apenas as linguagens citadas (na forma em que foram escritas)
 - Dados: arquivo [conhecidas.txt](src/conhecidas.txt)
 
-
 > Problema: como gerar um "ranking" das linguagens já usadas pela turma?
+
+```
+C,typeScript,sql,assembly
+PHP,html,css,JavaScript,C,Assembly
+Python,C,Assembly
+C,C++,Assembly,Java
+C#,C,python,assembly
+Java,Rust,C++,Kotlin,Lua,C,Go,TypeScript
+C
+Java,Python,C,C++,Javascript
+Python, Typescript
+C++,C,Assembly
+C
+C,Php,Java,Python,JavaScript,html,css,sql
+C,PHP,C++
+C,python,C++,java,lua,P4
+java,C,python
+C,SQL
+PHP,Java,C,C++,
+C,Python,JavaScript
+C,C++,Java,PHP,SQL,Python
+C,Java,Typescript,JavaScript
+c,php,java,c++,c#
+C,python
+C,JavaScript
+javascript,php,c++,html,delphi
+C,Python,php
+C,C++,Php
+```
+
+
 
 ### Decomposição
 

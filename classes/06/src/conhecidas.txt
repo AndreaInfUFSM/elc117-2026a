@@ -1,28 +1,28 @@
-C,TypeScript,SQL,Assembly
-PHP,HTML,CSS,JavaScript,C,Assembly
+C,typeScript,sql,assembly
+PHP,html,css,JavaScript,C,Assembly
 Python,C,Assembly
 C,C++,Assembly,Java
-C#,C,Python,Assembly
+C#,C,python,assembly
 Java,Rust,C++,Kotlin,Lua,C,Go,TypeScript
 C
-Java,Python,C,C++,JavaScript
-Python, TypeScript
+Java,Python,C,C++,Javascript
+Python, Typescript
 C++,C,Assembly
 C
-C,PHP,Java,Python,JavaScript,HTML,CSS,SQL
+C,Php,Java,Python,JavaScript,html,css,sql
 C,PHP,C++
-C,Python,C++,Java,Lua,P4
-Java,C,Python
+C,python,C++,java,lua,P4
+java,C,python
 C,SQL
 PHP,Java,C,C++,
 C,Python,JavaScript
 C,C++,Java,PHP,SQL,Python
-C,Java,TypeScript,JavaScript
-C,PHP,Java,C++,C#
-C,Python
+C,Java,Typescript,JavaScript
+c,php,java,c++,c#
+C,python
 C,JavaScript
-JavaScript,PHP,C++,HTML,Delphi
-C,Python,PHP
-C,C++,PHP
+javascript,php,c++,html,delphi
+C,Python,php
+C,C++,Php
 
 
