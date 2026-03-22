@@ -27,6 +27,7 @@ link:     custom.css
 <!--
 nvm use v14.21.1
 liascript-devserver --input README.md --port 3001 --live
+npx -p @liascript/devserver liascript-devserver --test --input ./README.md
 https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/master/classes/06/README.md
 -->
 
