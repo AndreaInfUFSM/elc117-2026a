@@ -534,13 +534,17 @@ ghci> map (\x -> x * x) [1,2,3]
 
 ## Prática para entregar
 
-- Faça login no GitHub e acesse https://github.com/codespaces para localizar o Codespace da última prática
+- Faça login no GitHub
+
+- Acesse https://github.com/codespaces para localizar o Codespace da última prática OU acesse seu repositório `https://github.com/elc117/haskell01-2026a-<username>`
 
 - Crie uma pasta `haskell02` e copie estes arquivos para dentro da pasta:
 
+  - [MiniStreaming.hs](src/MiniStreaming.hs)
   - [MyFunctions.hs](src/MyFunctions.hs)
   - [TestMyFunctions.hs](src/TestMyFunctions.hs)
 
+- Complete o arquivo [MiniStreaming.hs](src/MiniStreaming.hs) com o que é solicitado
 - Complete o arquivo [MyFunctions.hs](src/MyFunctions.hs) com o que é solicitado
 
 - Para testar manualmente o arquivo [MyFunctions.hs](src/MyFunctions.hs) no GHCi:
