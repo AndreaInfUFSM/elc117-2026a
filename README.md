@@ -105,7 +105,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>23/03/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação funcional (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/07/README.md">Mais sobre programação funcional em Haskell</a>: funções de alta ordem (map, filter, foldr1/foldl1, zipWith), funções anônimas/lambda, tuplas, prática no Codespaces</li>
+<li>Apresentação de exercícios (tuplas): <a href="https://github.com/elc117/apresentacao-bim1-2026a-EmanuelCristo">Emanuel</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-gabriel-maroneze">Gabriel M.</a></li>
 </ul></td>
 </tr>
 

@@ -41,6 +41,88 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 > O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
 
 
+
+
+
+## Tuplas
+
+- Sequência de elementos entre parênteses, separados por vírgula
+- Tuplas agrupam dados que podem ser de diferentes tipos, em um único "registro"
+- Semelhante a `struct` em C, mas sem identificação dos campos 
+
+
+Exemplos:
+
+```haskell
+("Fulano",32)
+("Reitoria",-29.72083,-53.71479)
+```
+
+### Operações com tuplas
+
+Para tuplas com apenas 2 elementos, podemos obter o primeiro ou o segundo com as funções `fst` e `snd`:
+
+```haskell
+ghci> fst ("Fulano",32) 
+"Fulano"
+ghci> fst (1,2,3)
+error!
+ghci> snd ("Fulano",32)
+32
+```
+
+### Tuplas e lambda
+
+> Tuplas com muitos elementos não são comuns, mas...
+
+E se tivermos mais de 2 elementos? Podemos usar lambda para obter o terceiro, quarto, etc.
+
+```haskell
+ghci> (\(n,lat,long) -> long) ("Reitoria",-29.72083,-53.71479)
+-53.71479
+```
+
+### Quiz
+
+- Nos exemplos abaixo, temos 2 tuplas de tipo `(String, Int)`. 
+- Uma lista com estas tuplas tem tipo `[(String,Int)]`. 
+
+
+1. Qual o resultado do código abaixo executado no GHCi?
+
+   ```haskell
+   filter (\(_,age) -> age > 60) [("Fulano", 32),("Beltrano", 64)] -- 2 tuplas (String,Int)
+   ```
+
+   - [( )] `[64]`
+   - [(x)] `[("Beltrano",64)]`
+   - [( )] `("Beltrano",64)`
+   *******************************************
+
+   A função `filter` sempre retorna uma lista. Neste caso, a lista contém a tupla selecionada pela função lambda, que recebe uma tupla e retorna o resultado `True` ou `False` da condição aplicada ao segundo elemento (`age`).
+
+   *******************************************
+
+
+2. Qual o resultado do código abaixo executado no GHCi?
+
+   ```haskell
+   hey you = "Hey " ++ you 
+   greet people = map hey people   
+   greet (map (\(name,_) -> name) [("Fulano", 32),("Beltrano", 64)]) 
+   ```
+
+   - [(x)] `["Hey Fulano","Hey Beltrano"]`
+   - [( )] `[("Fulano", 32),("Beltrano", 64)]`
+   - [( )] `("Hey Fulano", "Hey Beltrano")`
+   *******************************************
+
+   A função `hey` concatena a String `"Hey "` com o valor de `you`. A função `greet` aplica a função `hey` a cada um dos elementos da lista `people`. Por fim, a última linha aplica `greet` a uma lista resultante de um `map` com uma função lambda que obtém o primeiro elemento de uma tupla. Isso vai retornar a lista `["Fulano","Beltrano"]`, que vai ser passado como argumento para `greet`. Todo este código poderia ser reduzido a `map (\(name,_) -> "Hey " ++ name) [("Fulano", 32),("Beltrano", 64)]`
+
+   *******************************************
+
+
+
 ## Continuando com funções de alta ordem
 
 - São funções que recebem outras funções como argumento e/ou produzem funções como resultado
@@ -448,85 +530,6 @@ ghci> map (\x -> x * x) [1,2,3]
 
 
 
-## Tuplas
-
-- Sequência de elementos entre parênteses, separados por vírgula
-- Tuplas agrupam dados que podem ser de diferentes tipos, em um único "registro"
-- Semelhante a `struct` em C, mas sem identificação dos campos 
-
-
-Exemplos:
-
-```haskell
-("Fulano",32)
-("Reitoria",-29.72083,-53.71479)
-```
-
-### Operações com tuplas
-
-Para tuplas com apenas 2 elementos, podemos obter o primeiro ou o segundo com as funções `fst` e `snd`:
-
-```haskell
-ghci> fst ("Fulano",32) 
-"Fulano"
-ghci> fst (1,2,3)
-error!
-ghci> snd ("Fulano",32)
-32
-```
-
-### Tuplas e lambda
-
-> Tuplas com muitos elementos não são comuns, mas...
-
-E se tivermos mais de 2 elementos? Podemos usar lambda para obter o terceiro, quarto, etc.
-
-```haskell
-ghci> (\(n,lat,long) -> long) ("Reitoria",-29.72083,-53.71479)
--53.71479
-```
-
-### Quiz
-
-- Nos exemplos abaixo, temos 2 tuplas de tipo `(String, Int)`. 
-- Uma lista com estas tuplas tem tipo `[(String,Int)]`. 
-
-
-1. Qual o resultado do código abaixo executado no GHCi?
-
-   ```haskell
-   filter (\(_,age) -> age > 60) [("Fulano", 32),("Beltrano", 64)] -- 2 tuplas (String,Int)
-   ```
-
-   - [( )] `[64]`
-   - [(x)] `[("Beltrano",64)]`
-   - [( )] `("Beltrano",64)`
-   *******************************************
-
-   A função `filter` sempre retorna uma lista. Neste caso, a lista contém a tupla selecionada pela função lambda, que recebe uma tupla e retorna o resultado `True` ou `False` da condição aplicada ao segundo elemento (`age`).
-
-   *******************************************
-
-
-2. Qual o resultado do código abaixo executado no GHCi?
-
-   ```haskell
-   hey you = "Hey " ++ you 
-   greet people = map hey people   
-   greet (map (\(name,_) -> name) [("Fulano", 32),("Beltrano", 64)]) 
-   ```
-
-   - [(x)] `["Hey Fulano","Hey Beltrano"]`
-   - [( )] `[("Fulano", 32),("Beltrano", 64)]`
-   - [( )] `("Hey Fulano", "Hey Beltrano")`
-   *******************************************
-
-   A função `hey` concatena a String `"Hey "` com o valor de `you`. A função `greet` aplica a função `hey` a cada um dos elementos da lista `people`. Por fim, a última linha aplica `greet` a uma lista resultante de um `map` com uma função lambda que obtém o primeiro elemento de uma tupla. Isso vai retornar a lista `["Fulano","Beltrano"]`, que vai ser passado como argumento para `greet`. Todo este código poderia ser reduzido a `map (\(name,_) -> "Hey " ++ name) [("Fulano", 32),("Beltrano", 64)]`
-
-   *******************************************
-
-
-
 
 
 ## Prática para entregar
@@ -540,14 +543,14 @@ ghci> (\(n,lat,long) -> long) ("Reitoria",-29.72083,-53.71479)
 
 - Complete o arquivo [MyFunctions.hs](src/MyFunctions.hs) com o que é solicitado
 
-- Para testar o arquivo [MyFunctions.hs](src/MyFunctions.hs) no GHCi:
+- Para testar manualmente o arquivo [MyFunctions.hs](src/MyFunctions.hs) no GHCi:
 
   ```
   cd haskell02
   ghci MyFunctions.hs  
   ```
 
-- Ou melhor ainda, com teste automatizado:
+- Para **teste automatizado**:
 
   ```
   cd haskell02
