@@ -49,7 +49,7 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 - Sequência de elementos entre parênteses, separados por vírgula
 - Tuplas agrupam dados que podem ser de diferentes tipos, em um único "registro"
 - Semelhante a `struct` em C, mas sem identificação dos campos 
-
+- Mais simples que [algebraic data types](https://learnyouahaskell.github.io/making-our-own-types-and-typeclasses.html#algebraic-data-types)
 
 Exemplos:
 
@@ -567,9 +567,9 @@ ghci> map (\x -> x * x) [1,2,3]
 ## Bibliografia
 
 
-Consulte as seções abaixo no livro [Learn you a Haskell for Great Good!](http://learnyouahaskell.com), de Miran Lipovača:
+Consulte as seções abaixo no livro [Learn you a Haskell for Great Good!](https://learnyouahaskell.github.io/), de Miran Lipovača:
 
-- [Funções de alta ordem (map, filter, etc.)](http://learnyouahaskell.com/higher-order-functions) 
-- [Funções anônimas](http://learnyouahaskell.com/higher-order-functions#lambdas)
-- [Tuplas](http://learnyouahaskell.com/starting-out) (procure por Tuples)
+- [Funções de alta ordem (map, filter, etc.)](https://learnyouahaskell.github.io/higher-order-functions.html) 
+- [Funções anônimas](https://learnyouahaskell.github.io/higher-order-functions.html#lambdas)
+- [Tuplas](https://learnyouahaskell.github.io/starting-out.html#tuples) 
 
