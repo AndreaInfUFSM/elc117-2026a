@@ -19,7 +19,7 @@ link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
 script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
-link:     https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/refs/heads/main/assets/css/custom.css
+link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 -->
 
 <!--
@@ -40,32 +40,6 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 >
 > O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
 
-## Prática
-
-- Faça login no GitHub e acesse https://github.com/codespaces para localizar o Codespace da última prática
-
-- Crie uma pasta `haskell02` e copie estes arquivos para dentro da pasta:
-
-  - [MyFunctions.hs](src/MyFunctions.hs)
-  - [TestMyFunctions.hs](src/TestMyFunctions.hs)
-
-- Complete o arquivo [MyFunctions.hs](src/MyFunctions.hs) com o que é solicitado
-
-- Para testar o arquivo [MyFunctions.hs](src/MyFunctions.hs) no GHCi:
-
-  ```
-  cd haskell02
-  ghci MyFunctions.hs  
-  ```
-
-- Ou melhor ainda, com teste automatizado:
-
-  ```
-  cd haskell02
-  runhaskell TestMyFunctions.hs
-  ```
-
-- Faça commit+push para enviar os exercícios para seu repositório
 
 ## Continuando com funções de alta ordem
 
@@ -555,6 +529,32 @@ ghci> (\(n,lat,long) -> long) ("Reitoria",-29.72083,-53.71479)
 
 
 
+## Prática para entregar
+
+- Faça login no GitHub e acesse https://github.com/codespaces para localizar o Codespace da última prática
+
+- Crie uma pasta `haskell02` e copie estes arquivos para dentro da pasta:
+
+  - [MyFunctions.hs](src/MyFunctions.hs)
+  - [TestMyFunctions.hs](src/TestMyFunctions.hs)
+
+- Complete o arquivo [MyFunctions.hs](src/MyFunctions.hs) com o que é solicitado
+
+- Para testar o arquivo [MyFunctions.hs](src/MyFunctions.hs) no GHCi:
+
+  ```
+  cd haskell02
+  ghci MyFunctions.hs  
+  ```
+
+- Ou melhor ainda, com teste automatizado:
+
+  ```
+  cd haskell02
+  runhaskell TestMyFunctions.hs
+  ```
+
+- Faça commit+push para enviar os exercícios para seu repositório
 
 
 
