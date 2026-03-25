@@ -116,7 +116,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>Qua</td>
 <td><ul>
 <li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/08/README.md">Programas maiores em Haskell</a>: uso de let e where, exemplo de validação de CPF, prática no Codespaces</li>
-<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Diego</a> (aplicação parcial) e <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Deivid</a> (lista de exercícios e HUnit)
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-goulartdiego97">Diego</a> (aplicação parcial) e <a href="https://github.com/elc117/apresentacao-bim1-2026a-deividtrindade777">Deivid</a> (lista de exercícios e HUnit)
 </li>
 </ul></td>
 </tr>
