@@ -398,7 +398,7 @@ main = do
 Cálculo da área de superfície de um cilindro: 
 
 - Em matemática: https://pt.khanacademy.org/math/geometry/hs-geo-solids/hs-geo-solids-intro/v/cylinder-volume-and-surface-area
-- Em Haskell: http://learnyouahaskell.com/syntax-in-functions
+- Em Haskell: http://learnyouahaskell.github.io/syntax-in-functions
 
 
 ``` haskell
@@ -475,7 +475,7 @@ Atenção à endentação (indent):
 Cálculo da área de superfície de um cilindro: 
 
 - Em matemática: https://pt.khanacademy.org/math/geometry/hs-geo-solids/hs-geo-solids-intro/v/cylinder-volume-and-surface-area
-- Em Haskell: http://learnyouahaskell.com/syntax-in-functions
+- Em Haskell: http://learnyouahaskell.github.io/syntax-in-functions
 
 
 ``` haskell
