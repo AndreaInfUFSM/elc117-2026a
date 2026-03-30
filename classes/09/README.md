@@ -302,7 +302,7 @@ Resolva o exercício 13 usando lambda.
 Novidades: 
 
 - [list comprehension em Haskell](https://dev.to/awwsmm/relearn-you-a-haskell-part-2-list-comprehensions-tuples-and-types-g29)
-- uso de `$`
+- uso de `$`: veja um pouco sobre isso [aqui](https://academy.fpblock.com/haskell/tutorial/operators/)
 
 
 Para responder às questões, considere o seguinte código em Haskell:
