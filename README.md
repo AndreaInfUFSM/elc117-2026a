@@ -126,7 +126,9 @@ Dinâmica de acolhimento da turma.</li>
 <td>30/03/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação funcional (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/09/README.md">Exercícios, muitos exercícios!</a></li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-sofia-nep">Sofia E.</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-nicolas-stroher">Nicolas</a>
+</li>
 </ul></td>
 </tr>
 
