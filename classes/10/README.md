@@ -331,13 +331,16 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 - Muitas funções manipulam listas existentes: 
   
   - `head`, `tail`, `init`, `last`, etc.
-  - veja mais em https://hackage.haskell.org/package/base-4.18.0.0/docs/Prelude.html#g:13
+  - veja mais em 
+  
+    - https://hackage.haskell.org/package/base-4.18.0.0/docs/Prelude.html#g:13
+    - https://learnyouahaskell.github.io/starting-out.html#an-intro-to-lists
 
 
-- Haskell também tem recursos sintáticos muito úteis para criar e gerar listas - é o que veremos no restante desta aula
+- Haskell também tem recursos sintáticos muito úteis para **criar e gerar listas** - é o que veremos no restante desta aula
 
 
-![Desenho em estilo "rabisco" de uma centopeia estilizada, com a cabeça decorada com uma flor e corpo contendo 4 segmentos, cada segmento com um par de pés usando botas/meias. No desenho, estão indicadas 4 funções básicas com listas em Haskell: head (primeiro elemento, cabeça da lista), tail (restante da lista, sem a cabeça), init (lista sem o último elemento) e last (último elemento da lista). ](http://s3.amazonaws.com/lyah/listmonster.png "Fonte: List monster by Miran Lipovača (s3.amazonaws.com/lyah/listmonster.png)")
+![Desenho em estilo "rabisco" de uma centopeia estilizada, com a cabeça decorada com uma flor e corpo contendo 4 segmentos, cada segmento com um par de pés usando botas/meias. No desenho, estão indicadas 4 funções básicas com listas em Haskell: head (primeiro elemento, cabeça da lista), tail (restante da lista, sem a cabeça), init (lista sem o último elemento) e last (último elemento da lista). ](https://learnyouahaskell.github.io/assets/images/starting-out/listmonster.png "Fonte: List monster by Miran Lipovača (https://learnyouahaskell.github.io/assets/images/starting-out/listmonster.png)")
 
 
 
@@ -965,10 +968,10 @@ Caso responda incorretamente, teste os códigos por partes no interpretador inte
 ## Bibliografia
 
 
-Consulte as seções abaixo no livro [Learn you a Haskell for Great Good!](http://learnyouahaskell.com), de Miran Lipovača:
+Consulte as seções abaixo no livro [Learn you a Haskell for Great Good!](http://learnyouahaskell.github.io), de Miran Lipovača:
 
-- [List comprehension](http://learnyouahaskell.com/starting-out#im-a-list-comprehension)
-- [Funções de alta ordem (map, filter, etc.)](http://learnyouahaskell.com/higher-order-functions)
-- [Funções anônimas](http://learnyouahaskell.com/higher-order-functions#lambdas)
-- [Tuplas](http://learnyouahaskell.com/starting-out#tuples) 
+- [List comprehension](http://learnyouahaskell.github.io/starting-out#im-a-list-comprehension)
+- [Funções de alta ordem (map, filter, etc.)](http://learnyouahaskell.github.io/higher-order-functions)
+- [Funções anônimas](http://http://learnyouahaskell.github.io/higher-order-functions#lambdas)
+- [Tuplas](http://http://learnyouahaskell.github.io/starting-out#tuples) 
 
