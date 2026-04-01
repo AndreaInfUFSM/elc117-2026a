@@ -149,7 +149,7 @@ Resolva o exercício 1 usando lambda.
 ### Questões 3 e 4
 
 <h4>Questão 3</h4>
-Crie uma função para obter as bounding boxes com scores maiores que um dado valor. Essa função deve receber a lista de bounding boxes, a lista de classes e o valor do limiar.
+Crie uma função para obter as bounding boxes com scores maiores que um dado valor. Essa função deve receber a lista de bounding boxes, a lista de scores e o valor do limiar.
 Resolva esta função sem usar lambda, só usando outras funções existentes ou que você declarar. Pesquise a função zip, que será útil aqui.
 
 Exemplo de uso:
