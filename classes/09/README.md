@@ -41,8 +41,12 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 > Exercícios, muitos exercícios!
 
-
-
+<script>
+  window.goatcounter.count({
+    path: "/liascript-test",
+    title: "LiaScript test"
+  })
+</script>
 
 ## Primeira lista
 
