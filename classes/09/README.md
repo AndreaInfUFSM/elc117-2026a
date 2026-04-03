@@ -42,15 +42,12 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 <script 
   (function () {
-      if (window.__gc_loaded__) return;
-      window.__gc_loaded__ = true;
-
-      const s = document.createElement("script");
-      s.src = "https://gc.zgo.at/count.js";
-      s.async = true;
-      s.dataset.goatcounter = "https://andreainfufsm.goatcounter.com/count";
-      document.head.appendChild(s);
-    })();        
+    const s = document.createElement("script");
+    s.async = true;
+    s.src = "https://gc.zgo.at/count.js";
+    s.dataset.goatcounter = "https://andreainfufsm.goatcounter.com/count";
+    document.head.appendChild(s);
+  })();      
 </script>
 
 
