@@ -43,7 +43,7 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 <script>
   window.goatcounter.count({
-    path: "/liascript-test",
+    path: "/class09",
     title: "LiaScript test"
   })
 </script>
