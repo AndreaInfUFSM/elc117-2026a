@@ -21,18 +21,18 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
+
 script: |
   (function () {
-    if (window.__goatcounter_loaded__) return;
-    window.__goatcounter_loaded__ = true;
+    if (window.__gc_loaded__) return;
+    window.__gc_loaded__ = true;
 
     const s = document.createElement("script");
-    s.async = true;
     s.src = "https://gc.zgo.at/count.js";
+    s.async = true;
     s.dataset.goatcounter = "https://andreainfufsm.goatcounter.com/count";
     document.head.appendChild(s);
-  })();
-  
+  })();  
 -->
 
 
