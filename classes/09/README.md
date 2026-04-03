@@ -21,7 +21,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
-
+script:   https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/js/goatcounter-config.js
 script:   https://gc.zgo.at/count.js
 
 -->
@@ -41,26 +41,7 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 > Exercícios, muitos exercícios!
 
-<script>
-(function waitForGoatCounter() {
-  const timer = setInterval(() => {
-    if (!window.goatcounter || typeof window.goatcounter.count !== "function") return;
 
-    clearInterval(timer);
-
-    // useful for localhost tests
-    window.goatcounter.allow_local = true;
-
-    // manual count
-    window.goatcounter.count({
-      no_events: true,
-      path: location.pathname + location.hash,
-      title: document.title,
-      event: false
-    });
-  }, 100);
-})();
-</script>
 
 
 ## Primeira lista
