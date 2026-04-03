@@ -22,6 +22,33 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
 
+<!--
+script: |
+  window.goatcounter = {
+    no_onload: true,
+    allow_local: true,
+    endpoint: "https://andreainfufsm.goatcounter.com/count"
+  };
+
+  (function () {
+    if (window.__gc_loaded__) return;
+    window.__gc_loaded__ = true;
+
+    const s = document.createElement("script");
+    s.src = "https://gc.zgo.at/count.js";
+    s.onload = function () {
+      if (window.goatcounter && typeof window.goatcounter.count === "function") {
+        window.goatcounter.count({
+          path: location.pathname,
+          title: document.title
+        });
+      } else {
+        console.log("GoatCounter loaded, but count() is unavailable.");
+      }
+    };
+    document.head.appendChild(s);
+  })();
+-->
 
 -->
 
@@ -39,18 +66,6 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 # Programação Funcional em Haskell
 
 > Exercícios, muitos exercícios!
-
-<script>
-    window.goatcounter = {no_onload: true}
-
-    window.addEventListener('hashchange', function(e) {
-        window.goatcounter.count({
-            path: location.pathname + location.search + location.hash,
-        })
-    })
-</script>
-<script data-goatcounter="https://andreainfufsm.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
 
 
 
