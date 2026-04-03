@@ -22,7 +22,7 @@ script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
 
-<!--
+
 script: |
   window.goatcounter = {
     no_onload: true,
@@ -48,7 +48,7 @@ script: |
     };
     document.head.appendChild(s);
   })();
--->
+
 
 -->
 
