@@ -40,8 +40,18 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 > Exercícios, muitos exercícios!
 
-<script data-goatcounter="https://andreainfufsm.goatcounter.com/count"
-        src="//gc.zgo.at/count.js"></script>
+<script 
+  (function () {
+      if (window.__gc_loaded__) return;
+      window.__gc_loaded__ = true;
+
+      const s = document.createElement("script");
+      s.src = "https://gc.zgo.at/count.js";
+      s.async = true;
+      s.dataset.goatcounter = "https://andreainfufsm.goatcounter.com/count";
+      document.head.appendChild(s);
+    })();        
+</script>
 
 
 ## Primeira lista
