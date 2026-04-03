@@ -40,15 +40,19 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 > Exercícios, muitos exercícios!
 
-<script 
-  (function () {
-    const s = document.createElement("script");
-    s.async = true;
-    s.src = "https://gc.zgo.at/count.js";
-    s.dataset.goatcounter = "https://andreainfufsm.goatcounter.com/count";
-    document.head.appendChild(s);
-  })();      
+<script>
+    window.goatcounter = {no_onload: true}
+
+    window.addEventListener('hashchange', function(e) {
+        window.goatcounter.count({
+            path: location.pathname + location.search + location.hash,
+        })
+    })
 </script>
+<script data-goatcounter="https://andreainfufsm.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+
+
 
 
 ## Primeira lista
