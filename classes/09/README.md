@@ -43,8 +43,8 @@ https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfU
 
 <script>
   window.goatcounter.count({
-    path: "/class09",
-    title: "LiaScript test"
+    path: "/classes/09",
+    title: "2026a Class 09"
   })
 </script>
 
