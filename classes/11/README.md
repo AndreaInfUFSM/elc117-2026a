@@ -103,8 +103,7 @@ As etapas do trabalho são as seguintes (veja também detalhamento nas páginas 
 ### Repositório
 
 - Criação de repositório: https://classroom.github.com/a/xDmvZ4it
-- O repositório criado automaticamente estará vazio. Caberá a você adicionar todos os arquivos, incluindo aqueles provenientes do repositório de exemplo ([demo-scotty-codespace-2026a](https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md)
-)
+- O repositório criado automaticamente estará vazio. Caberá a você adicionar todos os arquivos, incluindo aqueles provenientes do repositório de exemplo ([demo-scotty-codespace-2026a](https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md))
 - Se você for desenvolver no Codespaces, lembre de manter no repositório a pasta oculta `.devcontainer` (contida nos repositórios de exercícios), com as configurações básicas do ambiente de desenvolvimento Haskell
 - Faça commits frequentes, seja com avanços no código ou registrando comentários no README
 
