@@ -44,6 +44,12 @@ Avaliação no primeiro bimestre:
   - ⚠️ Proposta: 12/04
   - ⚠️ Entrega: 03/05
 
+<script>
+  window.goatcounter.count({
+    path: "/elc117-2026a/classes/11",
+    title: "/elc117-2026a/classes/11"
+  })
+</script>
 
 ## Objetivos e requisitos 
 
