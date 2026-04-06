@@ -147,7 +147,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>06/04/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação lógica (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md">Web Service em Haskell</a></li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/11/README.md">Orientações sobre produção individual personalizada</li>
 </ul></td>
 </tr>
 
@@ -378,7 +379,7 @@ Primeiro bimestre:
 
 - Prova de leitura/escrita de código (peso 5): 29/04
 - Apresentação de exercícios (peso 2)
-- Produção individual personalizada (peso 3)
+- Produção individual personalizada (peso 3): 12/04 e 03/05
 
 Segundo bimestre:
 
