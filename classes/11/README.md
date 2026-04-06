@@ -40,8 +40,9 @@ Avaliação no primeiro bimestre:
 - Prova de leitura/escrita de código (peso 5): 29/04
 - Apresentação de exercícios (peso 2)
 - Produção individual personalizada (peso 3): 03/05
-  ⚠️ Proposta: 12/04
-  ⚠️ Entrega: 03/05
+
+  - ⚠️ Proposta: 12/04
+  - ⚠️ Entrega: 03/05
 
 
 ## Objetivos e requisitos 
@@ -61,7 +62,7 @@ Avaliação no primeiro bimestre:
 - Tema: desenvolver um serviço web que responda a requisições (GET, POST, etc.) usando Scotty, com ou sem banco de dados
 - Conforme visto em aula, Scotty é uma biblioteca em Haskell para construção de backend web 
 
-  - Ver mais sobre isso [nesta aula](https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md)
+  - Ver mais sobre isso em [demo-scotty-codespace-2026a](https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md)
 
 - Testes unitários:
 
@@ -102,12 +103,15 @@ As etapas do trabalho são as seguintes (veja também detalhamento nas páginas 
 ### Repositório
 
 - Criação de repositório: https://classroom.github.com/a/xDmvZ4it
-- Se você vai desenvolver no Codespaces, lembre de manter no repositório a pasta oculta `.devcontainer` (contida nos repositórios de exercícios), com as configurações básicas do ambiente de desenvolvimento Haskell
+- O repositório criado automaticamente estará vazio. Caberá a você adicionar todos os arquivos, incluindo aqueles provenientes do repositório de exemplo ([demo-scotty-codespace-2026a](https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-scotty-codespace-2026a/main/README.md)
+)
+- Se você for desenvolver no Codespaces, lembre de manter no repositório a pasta oculta `.devcontainer` (contida nos repositórios de exercícios), com as configurações básicas do ambiente de desenvolvimento Haskell
+- Faça commits frequentes, seja com avanços no código ou registrando comentários no README
 
 ### Desenvolvimento e testes
 
 - Desenvolvimento da proposta: estudo/pesquisa e construção/teste incremental do código, com commits frequentes no repositório
-- Lembre que é importante a criação de código de teste das funções que implementam a lógica do seu serviço
+- Lembre que é importante a criação de código de teste das funções que implementam a lógica do seu serviço (não se trata de testar se o serviço funciona pela web, mas sim de testar as funções puras que implementam a lógica)
 
 ### Deploy do serviço em nuvem
 
@@ -119,13 +123,13 @@ As etapas do trabalho são as seguintes (veja também detalhamento nas páginas 
 
 - A entrega final deve conter:
 
-  - Pelo menos 2 arquivos .hs: código principal e código de testes
+  - Pelo menos 2 arquivos .hs: código principal e código de testes (provavelmente mais que isso, mas é o mínimo)
   - Pasta oculta .devcontainer (contida nos repositórios de exercícios), contendo as configurações básicas do ambiente de desenvolvimento Haskell
   - Arquivos Dockerfile e render.yaml para deploy no Render
   - README.md preenchido de acordo com [este template](./template_entrega_README.md)
 
 
-
+ ⚠️ Configure o .gitignore para evitar enviar arquivos temporários, bibliotecas, etc.
 
 
 

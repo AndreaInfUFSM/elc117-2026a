@@ -58,6 +58,8 @@ Inclua, se necessário:
 - se você usou HUnit ou outro modo simples de teste;
 - exemplos curtos do que foi verificado.
 
+Lembre que não se trata de testar se o serviço funciona pela web, mas sim de testar as funções puras que implementam a lógica.
+
 ---
 
 ## 5. Execução
