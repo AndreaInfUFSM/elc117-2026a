@@ -158,7 +158,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>Qua</td>
 <td><ul>
 <li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/12/README.md">Exercícios: Scotty e revisão</li>
-<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Eduarda</a>, <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Bernardo C.</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-">João Daniel</a>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-Eduarda-araujo19">Eduarda</a>, <a href="https://github.com/elc117/apresentacao-bim1-2026a-AkkoHanabara">Bernardo C.</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-Oropoc">João Daniel</a>
 </ul></td>
 </tr>
 
