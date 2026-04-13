@@ -751,29 +751,7 @@ false.
 ## Quiz
 
 
-1. Um programa em Prolog precisa conter um "main" para ser executado, como em C?
-
-   - [( )] Sim
-   - [(x)] Não
-    ******************************************************
-
-    Não, a execução de um programa em Prolog se dá a partir de uma consulta usando um predicado que pode ter qualquer nome. 
-
-    *******************************************************
-
-2. Se você digitar `swipl prog.pl` no Shell, o programa `prog.pl` vai ser carregado no interpretador SWI-Prolog. Depois disso, o programa irá executar automaticamente?
-
-   - [( )] Sim
-   - [(x)] Não
-    ******************************************************
-
-    Não, a execução do programa se dá a partir de uma consulta digitada no interpretador.
-
-    *******************************************************
-
-
-
-3. Qual das opções abaixo é uma linha de código válida e completa em Prolog?
+1. Qual das opções abaixo é uma linha de código válida e completa em Prolog?
 
    - [( )] `idoso(X) :- idade(X, I), I >= 65`
    - [(x)] `avo(X,Z) :- mae(X,Y), mae(Y,Z).`
@@ -788,7 +766,7 @@ false.
 
 
 
-4. Quantos fatos e quantas regras compõem o programa Prolog abaixo?
+2. Quantos fatos e quantas regras compõem o programa Prolog abaixo?
 
    ``` prolog
    male(simon).
@@ -815,6 +793,29 @@ false.
    As 7 primeiras linhas contêm fatos (verdades incondicionais). As linhas seguintes contêm 2 regras, com lado esquerdo e lado direito separado por `:-`, definidas com quebra de linha.
 
    *******************************************************
+
+3. Um programa em Prolog precisa conter um "main" para ser executado, como em C?
+
+   - [( )] Sim
+   - [(x)] Não
+    ******************************************************
+
+    Não, a execução de um programa em Prolog se dá a partir de uma consulta usando um predicado que pode ter qualquer nome. 
+
+    *******************************************************
+
+4. Se você digitar `swipl prog.pl` no terminal, o programa `prog.pl` vai ser carregado no interpretador SWI-Prolog. Depois disso, o programa irá executar automaticamente?
+
+   - [( )] Sim
+   - [(x)] Não
+    ******************************************************
+
+    Não, a execução do programa se dá a partir de uma consulta digitada no interpretador.
+
+    *******************************************************
+
+
+
 
 ## Curiosidades
 
