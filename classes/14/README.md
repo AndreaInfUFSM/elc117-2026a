@@ -15,11 +15,7 @@ comment:  Material de apoio para a disciplina
 
 translation: English  translations/English.md
 
-link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
 
-script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
-
-link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
 script:   https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/js/goatcounter-config.js
 script:   https://gc.zgo.at/count.js
