@@ -177,7 +177,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>15/04/2026</td>
 <td>Qua</td>
 <td><ul>
-<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2025b/main/classes/13/README.md">Programação lógica com Prolog</a>: prática com base de filmes, unificação, listas, puzzles</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/14/README.md">Programação lógica com Prolog</a>: prática com base de filmes, unificação, listas, puzzles</li>
 <li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-goulartdiego97">Diego</a>, <a href="https://github.com/elc117/apresentacao-bim1-2026a-Di889 ">Diógenes</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-ODiogorocha">Diogo</a></li>
 </ul></td>
 </tr>
