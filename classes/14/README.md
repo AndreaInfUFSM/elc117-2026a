@@ -301,6 +301,58 @@ CodeRunner.send(
 </script>
 @end
 
+
+
+
+@loadAndRun
+<script style="display: block" modify="false" run-once="true">
+    const url = "@1"
+
+    let execute = ""
+    
+    try {
+      const [file, ending] = url.match(/[^\/]+$/)[0].split(".")
+
+      switch(ending) {
+        case "java": {
+          execute = "@LIA.java(" + file + ")"
+          break
+        }
+        case "c": {
+          execute = "@LIA.gcc"
+          break
+        }
+        case "pl": {
+          execute = "@LIA.prolog_withShell"
+          break
+        }
+      }
+      
+    } catch (e) {
+      console.warn("could not identify filename in", url)
+    }
+
+    fetch(url)
+    .then((response) => {
+        if (response.ok) {
+            response.text()
+            .then((text) => {
+
+                send.lia(`LIASCRIPT:
+\`\`\` @0
+${text}
+\`\`\`
+${execute}
+`)
+            })
+        } else {
+            send.lia("HTML: <span style='color: red'>Something went wrong, could not load <a href='@1'>@1</a></span>")
+        }
+    })
+    "loading: @1"
+</script>
+@end
+
 -->
 
 <!--
@@ -315,6 +367,423 @@ liascript-devserver --input README.md --port 3001 --live
 # Programação Lógica (2)
 
 
+> Este material é uma introdução ao paradigma de **programação lógica** em linguagem Prolog.
+>
+> O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
+
+<script>
+  window.goatcounter.count({
+    path: "/elc117-2026a/classes/14",
+    title: "/elc117-2026a/classes/14"
+  })
+</script>
+
+
+
+
+## Exemplo: `movies.pl`
+
+
+<div class="two-col--image-right">
+
+<div>
+
+
+``` prolog
+:- dynamic 
+     movie/3,
+     actor/2,
+     actress/2,
+     genre/2,
+     likes/2.
+:- discontiguous
+     movie/3,
+     actor/2,
+     actress/2,
+     genre/2,
+     likes/2.
+
+
+movie(1, parasite, 2019).
+genre(1, dark_comedy).
+genre(1, psychological_thriller).
+genre(1, drama).
+genre(1, thriller).
+genre(1, comedy).
+actor(1, song_kang_ho).
+actor(1, lee_sun_kyun).
+actress(1, cho_yeo_jeong).
+likes(anonymous1, 1).
+
+movie(2, tusk, 2014).
+genre(2, dark_comedy).
+genre(2, psychological_horror).
+genre(2, horror).
+genre(2, comedy).
+actor(2, justin_long).
+actor(2, michael_parks).
+actor(2, haley_joel_osment).
+likes(arthur, 2).
+
+movie(3, the_hunger_games, 2012).
+genre(3, dystopian_sci_fi).
+genre(3, teen_adventure).
+genre(3, action).
+genre(3, adventure).
+genre(3, sci_fi).
+genre(3, thriller).
+actress(3, jennifer_lawrence).
+actor(3, josh_hutcherson).
+actor(3, liam_hemsworth).
+likes(anonymous2, 3).
+
+
+movie(4, predestination, 2014).
+genre(4, time_travel).
+genre(4, action).
+genre(4, drama).
+genre(4, sci_fi).
+genre(4, thriller).
+actor(4, ethan_hawke).
+actress(4, sarah_snook).
+actor(4, noah_taylor).
+likes(nicholas, 4).
+
+
+movie(5, alien_romulus, 2024).
+genre(5, monster_horror).
+genre(5, space_sci_fi).
+genre(5, horror).
+genre(5, sci_fi).
+genre(5, thriller).
+actress(5, cailee_spaeny).
+actor(5, david_jonsson).
+actor(5, archie_renaux).
+likes(anonymous3, 5).
+
+
+movie(6, the_menu, 2022).
+genre(6, dark_comedy).
+genre(6, psychological_horror).
+genre(6, satire).
+genre(6, comedy).
+genre(6, horror).
+genre(6, thriller).
+actor(6, ralph_fiennes).
+actress(6, anya_taylor_joy).
+actor(6, nicholas_hoult).
+likes(miguel, 6).
+
+
+movie(7, dead_poets_society, 1989).
+actor(7, robin_williams).
+actor(7, robert_sean_leonard).
+actor(7, ethan_hawke).
+genre(7, teen_drama).
+genre(7, comedy).
+genre(7, drama).
+likes(anonymous4, 7).
+
+
+movie(8, everything_everywhere_all_at_once, 2022).
+genre(8, adventure_epic).
+genre(8, dark_comedy).
+genre(8, martial_arts).
+genre(8, sci_fi_epic).
+genre(8, action).
+genre(8, adventure).
+genre(8, comedy).
+genre(8, fantasy).
+genre(8, sci_fi).
+actress(8, michelle_yeoh).
+actress(8, stephanie_hsu).
+actress(8, jamie_lee_curtis).
+likes(guilherme, 8).
+
+
+movie(9, schindlers_list, 1993).
+genre(9, epic).
+genre(9, historical_epic).
+genre(9, prison_drama).
+genre(9, biography).
+genre(9, drama).
+genre(9, history).
+actor(9, liam_neeson).
+actor(9, ralph_fiennes).
+actor(9, ben_kingsley).
+likes(anonymous5, 9).
+
+
+movie(10, happy_death_day, 2017).
+genre(10, dark_comedy).
+genre(10, slasher_horror).
+genre(10, teen_horror).
+genre(10, comedy).
+genre(10, horror).
+genre(10, mystery).
+genre(10, thriller).
+actress(10, jessica_rothe).
+actor(10, israel_broussard).
+actress(10, ruby_modine).
+likes(anonymous6, 10).
+
+
+movie(11, inglorious_basterds, 2009).
+genre(11, dark_comedy).
+genre(11, adventure).
+genre(11, drama).
+genre(11, war).
+actor(11, brad_pitt).
+actress(11, diane_kruger).
+actor(11, eli_roth).
+likes(gustavo, 11).
+
+
+movie(12, big_fish, 2003).
+genre(12, adventure_epic).
+genre(12, fairy_tale).
+genre(12, adventure).
+genre(12, drama).
+genre(12, fantasy).
+genre(12, romance).
+actor(12, ewan_mcgregor).
+actor(12, albert_finney).
+actor(12, billy_crudup).
+likes(kiri, 12).
+
+
+movie(13, avatar_the_way_of_water, 2022).
+genre(13, action_epic).
+genre(13, adventure_epic).
+genre(13, sci_fi_epic).
+genre(13, sea_adventure).
+genre(13, action).
+genre(13, adventure).
+genre(13, fantasy).
+genre(13, sci_fi).
+actor(13, sam_worthington).
+actress(13, zoe_saldana).
+actress(13, sigourney_weaver).
+likes(anonymous7, 13).
+
+
+movie(14, surfs_up, 2007).
+genre(14, animal_adventure).
+genre(14, computer_animation).
+genre(14, satire).
+genre(14, adventure).
+genre(14, animation).
+genre(14, comedy).
+genre(14, family).
+genre(14, sport).
+actor(14, shia_labeouf).
+actress(14, zooey_deschanel).
+actor(14, jon_heder).
+likes(righi, 14).
+
+drama_actor(A) :- actor(M, A), genre(M, drama).
+
+allgenres(R) :- findall(G,genre(_,G),L), list_to_set(L,R).
+       
+countgenres(C) :- allgenres(G), length(G, C).
+```
+
+</div>
+
+<div>
+
+Este código em Prolog declara os seguintes **predicados** sobre filmes:
+
+- `movie/3`: fatos na forma `movie(MovieId, MovieName, Year)`
+- `actor/2`: fatos na forma `actor(MovieId, ActorName)`
+- `actress/2`: fatos na forma `actress(MovieId, ActressName)`
+- `genre/2`: fatos na forma `genre(MovieId, Genre)`
+- `likes/2`: fatos na forma `likes(UserName, MovieId)`
+- `drama_actor/1`: regra estabelecendo que `A` é um ator de drama se `A` for ator do filme `M` e este filme for do gênero drama.
+
+
+</div>
+
+</div>
+
+
+
+
+### Teste consultas básicas
+
+
+
+
+Qual será o resultado das seguintes consultas?
+
+
+1. `?- movie(Id, M, 2014).`
+
+2. `?- movie(Id, M, A), A >= 2020.` (digite `;` após a primeira resposta para buscar mais respostas)
+
+3. `?- movie(Id, M, A), A =< 2000.`
+
+
+
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+
+### Variável conectando predicados
+
+
+
+
+Qual será o resultado da seguinte consulta?
+
+`?- movie(Id,tusk,_), actor(Id,Name).`
+
+Observações:
+- Usamos a variável `Id` para "conectar" as duas condições nesta consulta. 
+- Quando a execução do programa testar um valor para `Id` na primeira condição, este valor será mantido na segunda condição.
+- Note que o símbolo `_` é uma variável anônima, usada quando não queremos obter um valor para ela, mas apenas sinalizar que existe um argumento na posição.
+
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+
+### Variável anônima (`_`)
+
+Mais sobre variáveis em Prolog:
+
+- Iniciam por maiúsculas, p.ex. `X`, `Solucao`, etc.
+- Também podem iniciar por `_` (underline, sublinhado), p.ex. `_casas`, `_X` (sintaxe pouco usada)
+
+Variável pode ser "anônima" (sem nome):
+
+- Usa apenas o símbolo `_`
+- Usado como "placeholder", quando não nos interessa o valor, só a posição
+
+
+
+
+
+
+### Fique por dentro da execução
+
+Ative o modo de execução passo-a-passo para ver como o interpretador Prolog faz uma busca na base de fatos e regras:
+
+```
+?- trace.
+true.
+```
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+Execute a consulta `actor(11,A)`. Digite `Enter` para avançar e `;` depois da primeira resposta, para buscar outras respostas.
+
+```
+[trace] 1 ?- actor(11,A).
+   Call: (10) actor(11, _8588) ? creep
+   Exit: (10) actor(11, brad_pitt) ? creep
+A = brad_pitt ;
+   Redo: (10) actor(11, _8588) ? creep
+   Exit: (10) actor(11, eli_roth) ? creep
+A = eli_roth.
+```
+
+Desative o modo de execução passo-a-passo:
+
+```
+[trace]  ?- nodebug.
+true.
+```
+
+
+
+
+
+### Escreva suas consultas 
+
+Nestes exercícios:
+
+- você vai escrever consultas em Prolog para responder às perguntas
+- as consultas vão utilizar os predicados definidos no programa, com argumentos constantes ou variáveis, de acordo com a pergunta
+- para encadear mais de um predicado/condição, use `,` para expressar um "e" lógico ou `;` para expressar um "ou" lógico
+
+
+Escreva estas consultas:
+
+
+1. O filme `schindlers_list` é uma comédia?
+
+
+
+2. Quais os atores (masculinos) do filme `inglorious_basterds`? 
+
+
+3. Quais os filmes lançados na década de 80 (entre 1981 e 1990, inclusive)? Dica: veja operadores relacionais no [material da aula passada](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/13/README.md#20).
+
+
+
+4. Quais os atores ou atrizes do filme `the_hunger_games`?
+
+
+
+5. O ator `brad_pitt` é um ator de drama? 
+
+
+
+6. Há quantos anos foi lançado o filme `big_fish`? Consulte o material da aula passada para saber como fazer operações aritméticas em Prolog.
+
+
+
+7. O ator `liam_neeson` é um ator de comédia?
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+
+
+### Adicione regras em `movies.pl`
+
+No final do arquivo `movies.pl`:
+
+1. Defina o predicado `drama_artist(A)`, que será verdadeiro se `A` for ator ou atriz em um filme de drama. 
+
+
+
+2. Defina o predicado `movieAgeByName(M, Age)`, em que `Age` será a idade (em anos) do filme de nome `M`, no ano atual. 
+
+
+
+3. Defina o predicado `recommend(U,M)`, para recomendar um filme de nome `M` a um usuário `U`. Este predicado será verdadeiro se for encontrado um filme do mesmo gênero de um filme apreciado (`like`) pelo usuário `U`.
+
+
+
+**Atenção!** Execute consultas para testar todos os predicados que você definir, observando se o resultado é igual ao esperado.
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+
+### No Codespaces
+
+Para realizar esses exercícios diretamente no SWI-Prolog, baixe o programa [movies.pl](src/movies.pl) no seu Codespace de Prolog:
+
+No Terminal do Codespace, digite:
+
+``` bash
+wget https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/14/src/movies.pl
+```
+  
+#### Comandos no `swipl`
+
+- Para carregar o programa `moviesl.pl` no interpretador, digite no Terminal: `swipl movies.pl`
+- Para sair do interpretador: `Ctrl-D` ou `halt.`
+- Para (re-)carregar o programa `movies.pl` quando você estiver dentro do interpretador: `[movies].` (sem extensão .pl, e sem esquecer do ponto!)
+- Use setas para cima ou para baixo para navegar pelo histórico de consultas.
+- Para ativar o modo de execução passo-a-passo: `trace.`
+- Para desativar o modo de execução passo-a-passo: `nodebug.`
+- No prompt do SWI-Prolog (`?-`), digite consultas que vão retornar um resultado para uma pergunta. Por exemplo: "Em que ano foi lançado o filme Parasite?"
+
+  ``` prolog
+  ?- movie(1,parasite,A).
+  A = 2009.
+  ```
 
 
 ## Unificação
@@ -332,17 +801,6 @@ liascript-devserver --input README.md --port 3001 --live
 - Usado para provocar unificação, geralmente com variáveis
 - Resultado pode ser `true`, `false` ou valores atribuídos a variáveis 
 
-### Variável anônima (`_`)
-
-Mais sobre variáveis em Prolog
-
-- Iniciam por maiúsculas, p.ex. `X`, `Solucao`, etc.
-- Também podem iniciar por `_` (underline, sublinhado), p.ex. `_casas`, `_X` (sintaxe pouco usada)
-
-Variável pode ser "anônima" (sem nome)
-
-- Usa apenas o símbolo `_`
-- Usado como "placeholder", quando não nos interessa o valor, só a posição
 
 ### Exemplos no SWI-Prolog
 
@@ -414,10 +872,41 @@ false.
     ```
 
 
+### Consultas com listas
+
+Como já vimos, Prolog suporta listas nativamente.  No programa `movies.pl`, há alguns predicados que manipulam listas.
+
+
+Teste as seguintes consultas:
+
+
+1. Quais os gêneros de filmes na base de dados? A resposta será uma lista na variável G.
+
+   `?- allgenres(G).`
+
+2. Qual o primeiro gênero na lista? A resposta estará na variável H (head da lista G). 
+
+   `?- allgenres(G), G = [H | _].`
+
+3. Quantos são os gêneros de filmes na base de dados?
+   
+   `?- countgenres(C).`
+
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+
+### Adicione regra com lista
+
+Com base nos códigos anteriores, adicione um predicado (definido por uma regra) para contar o número de usuários na base de dados.
+
+@[loadAndRun(prolog)](src/movies.pl)
+
+<!-- allusers(Count) :- findall(U,likes(U,_),L), list_to_set(L,R), length(R, Count). -->
 
 ### Predicados com listas
 
-- Lembre que predicados em Prolog se assemelham a procedimentos (não a funções)
+- Predicados em Prolog se assemelham a procedimentos (não a funções)
 - Se quisermos que "retornem" algum valor, devemos usar variáveis nos argumentos
 
 #### `length/2`
@@ -671,389 +1160,6 @@ Len = 1.
 
 
 
-
-
-## Prática: `movies.pl`
-
-### Programa `movies.pl`
-
-Baixe o programa [movies.pl](src/movies.pl) no seu Codespace de Prolog:
-
-``` bash
-wget https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/14/src/movies.pl
-```
-
-Este código em Prolog declara os seguintes predicados sobre filmes:
-
-- `movie/3`: fatos na forma `movie(MovieId, MovieName, Year)`
-- `actor/2`: fatos na forma `actor(MovieId, ActorName)`
-- `actress/2`: fatos na forma `actress(MovieId, ActressName)`
-- `genre/2`: fatos na forma `genre(MovieId, Genre)`
-- `likes/2`: fatos na forma `likes(UserName, MovieId)`
-- `drama_actor/1`: regra estabelecendo que `A` é um ator de drama se `A` for ator do filme `M` e este filme for do gênero drama.
-
-
-``` prolog
-:- dynamic 
-     movie/3,
-     actor/2,
-     actress/2,
-     genre/2,
-     likes/2.
-:- discontiguous
-     movie/3,
-     actor/2,
-     actress/2,
-     genre/2,
-     likes/2.
-
-
-movie(1, parasite, 2019).
-genre(1, dark_comedy).
-genre(1, psychological_thriller).
-genre(1, drama).
-genre(1, thriller).
-genre(1, comedy).
-actor(1, song_kang_ho).
-actor(1, lee_sun_kyun).
-actress(1, cho_yeo_jeong).
-likes(anonymous1, 1).
-
-movie(2, tusk, 2014).
-genre(2, dark_comedy).
-genre(2, psychological_horror).
-genre(2, horror).
-genre(2, comedy).
-actor(2, justin_long).
-actor(2, michael_parks).
-actor(2, haley_joel_osment).
-likes(arthur, 2).
-
-movie(3, the_hunger_games, 2012).
-genre(3, dystopian_sci_fi).
-genre(3, teen_adventure).
-genre(3, action).
-genre(3, adventure).
-genre(3, sci_fi).
-genre(3, thriller).
-actress(3, jennifer_lawrence).
-actor(3, josh_hutcherson).
-actor(3, liam_hemsworth).
-likes(anonymous2, 3).
-
-
-movie(4, predestination, 2014).
-genre(4, time_travel).
-genre(4, action).
-genre(4, drama).
-genre(4, sci_fi).
-genre(4, thriller).
-actor(4, ethan_hawke).
-actress(4, sarah_snook).
-actor(4, noah_taylor).
-likes(nicholas, 4).
-
-
-movie(5, alien_romulus, 2024).
-genre(5, monster_horror).
-genre(5, space_sci_fi).
-genre(5, horror).
-genre(5, sci_fi).
-genre(5, thriller).
-actress(5, cailee_spaeny).
-actor(5, david_jonsson).
-actor(5, archie_renaux).
-likes(anonymous3, 5).
-
-
-movie(6, the_menu, 2022).
-genre(6, dark_comedy).
-genre(6, psychological_horror).
-genre(6, satire).
-genre(6, comedy).
-genre(6, horror).
-genre(6, thriller).
-actor(6, ralph_fiennes).
-actress(6, anya_taylor_joy).
-actor(6, nicholas_hoult).
-likes(miguel, 6).
-
-
-movie(7, dead_poets_society, 1989).
-actor(7, robin_williams).
-actor(7, robert_sean_leonard).
-actor(7, ethan_hawke).
-genre(7, teen_drama).
-genre(7, comedy).
-genre(7, drama).
-likes(anonymous4, 7).
-
-
-movie(8, everything_everywhere_all_at_once, 2022).
-genre(8, adventure_epic).
-genre(8, dark_comedy).
-genre(8, martial_arts).
-genre(8, sci_fi_epic).
-genre(8, action).
-genre(8, adventure).
-genre(8, comedy).
-genre(8, fantasy).
-genre(8, sci_fi).
-actress(8, michelle_yeoh).
-actress(8, stephanie_hsu).
-actress(8, jamie_lee_curtis).
-likes(guilherme, 8).
-
-
-movie(9, schindlers_list, 1993).
-genre(9, epic).
-genre(9, historical_epic).
-genre(9, prison_drama).
-genre(9, biography).
-genre(9, drama).
-genre(9, history).
-actor(9, liam_neeson).
-actor(9, ralph_fiennes).
-actor(9, ben_kingsley).
-likes(anonymous5, 9).
-
-
-movie(10, happy_death_day, 2017).
-genre(10, dark_comedy).
-genre(10, slasher_horror).
-genre(10, teen_horror).
-genre(10, comedy).
-genre(10, horror).
-genre(10, mystery).
-genre(10, thriller).
-actress(10, jessica_rothe).
-actor(10, israel_broussard).
-actress(10, ruby_modine).
-likes(anonymous6, 10).
-
-
-movie(11, inglorious_basterds, 2009).
-genre(11, dark_comedy).
-genre(11, adventure).
-genre(11, drama).
-genre(11, war).
-actor(11, brad_pitt).
-actress(11, diane_kruger).
-actor(11, eli_roth).
-likes(gustavo, 11).
-
-
-movie(12, big_fish, 2003).
-genre(12, adventure_epic).
-genre(12, fairy_tale).
-genre(12, adventure).
-genre(12, drama).
-genre(12, fantasy).
-genre(12, romance).
-actor(12, ewan_mcgregor).
-actor(12, albert_finney).
-actor(12, billy_crudup).
-likes(kiri, 12).
-
-
-movie(13, avatar_the_way_of_water, 2022).
-genre(13, action_epic).
-genre(13, adventure_epic).
-genre(13, sci_fi_epic).
-genre(13, sea_adventure).
-genre(13, action).
-genre(13, adventure).
-genre(13, fantasy).
-genre(13, sci_fi).
-actor(13, sam_worthington).
-actress(13, zoe_saldana).
-actress(13, sigourney_weaver).
-likes(anonymous7, 13).
-
-
-movie(14, surfs_up, 2007).
-genre(14, animal_adventure).
-genre(14, computer_animation).
-genre(14, satire).
-genre(14, adventure).
-genre(14, animation).
-genre(14, comedy).
-genre(14, family).
-genre(14, sport).
-actor(14, shia_labeouf).
-actress(14, zooey_deschanel).
-actor(14, jon_heder).
-likes(righi, 14).
-
-drama_actor(A) :- actor(M, A), genre(M, drama).
-
-allgenres(R) :- findall(G,genre(_,G),L), list_to_set(L,R).
-       
-countgenres(C) :- allgenres(G), length(G, C).
-```
-
-
-### Comandos no `swipl`
-
-- Para carregar o programa `moviesl.pl` no interpretador: `swipl movies.pl`
-- Para sair do interpretador: `Ctrl-D` ou `halt.`
-- Para (re-)carregar o programa `movies.pl` quando você estiver dentro do interpretador: `[movies].` (sem extensão .pl, e sem esquecer do ponto!)
-- Use setas para cima ou para baixo para navegar pelo histórico de consultas.
-- Para ativar o modo de execução passo-a-passo: `trace.`
-- Para desativar o modo de execução passo-a-passo: `nodebug.`
-
-### Teste consultas básicas
-
-
-- No terminal, digite `swipl movies.pl` para abrir o programa `movies.pl` no interpretador interativo do SWI-Prolog
-- No prompt do SWI-Prolog (`?-`), digite consultas que vão retornar um resultado para uma pergunta. Por exemplo: "Em que ano foi lançado o filme Parasite?"
-
-  ``` prolog
-  ?- movie(1,parasite,A).
-  A = 2009.
-  ```
-
-Teste as seguintes consultas:
-
-
-1. Quais os filmes lançados no ano de 2014?
-
-   `?- movie(Id, M, 2014).`
-
-2. Quais os filmes lançados na década atual? (digite `;` após a primeira resposta para buscar mais respostas)
-   
-   `?- movie(Id, M, A), A >= 2020.`
-
-3. Quais os filmes lançados no século passado? 
-   
-   `?- movie(Id, M, A), A =< 2000.`
-
-4. Quais os atores do filme `tusk`?
-
-   `?- movie(Id,tusk,_), actor(Id,Name).`
-
-   Observações:
-   
-   - Note que o símbolo `_` é uma variável anônima, usada quando não queremos obter um valor para ela, mas apenas sinalizar que existe um argumento na posição.
-
-   - Note que usamos a variável `Id` para "conectar" as duas condições nesta consulta. Quando a execução do programa testar um valor para `Id` na primeira condição, este valor será mantido na segunda condição.
-
-
-
-
-### Fique por dentro da execução
-
-Ative o modo de execução passo-a-passo para ver como o interpretador Prolog faz uma busca na base de fatos e regras:
-
-```
-?- trace.
-true.
-```
-
-Execute a consulta `actor(11,A)`. Digite `Enter` para avançar e `;` depois da primeira resposta, para buscar outras respostas.
-
-```
-[trace] 1 ?- actor(11,A).
-   Call: (10) actor(11, _8588) ? creep
-   Exit: (10) actor(11, brad_pitt) ? creep
-A = brad_pitt ;
-   Redo: (10) actor(11, _8588) ? creep
-   Exit: (10) actor(11, eli_roth) ? creep
-A = eli_roth.
-```
-
-Desative o modo de execução passo-a-passo:
-
-```
-[trace]  ?- nodebug.
-true.
-```
-
-
-
-### Escreva suas consultas 
-
-Nestes exercícios:
-
-- você vai escrever consultas em Prolog para responder às perguntas
-- as consultas vão utilizar os predicados definidos no programa, com argumentos constantes ou variáveis, de acordo com a pergunta
-- para encadear mais de um predicado/condição, use `,` para expressar um "e" lógico ou `;` para expressar um "ou" lógico
-
-
-Escreva estas consultas:
-
-
-1. O filme `schindlers_list` é uma comédia?
-
-
-
-2. Quais os atores (masculinos) do filme `inglorious_basterds`? 
-
-
-3. Quais os filmes lançados na década de 80 (entre 1981 e 1990, inclusive)? Dica: veja operadores relacionais no material da aula passada.
-
-
-
-4. Quais os atores ou atrizes do filme `the_hunger_games`?
-
-
-
-5. O ator `brad_pitt` é um ator de drama? 
-
-
-
-6. Há quantos anos foi lançado o filme `big_fish`? Consulte o material da aula passada para saber como fazer operações aritméticas em Prolog.
-
-
-
-7. O ator `liam_neeson` é um ator de comédia?
-
-
-
-### Adicione regras em `movies.pl`
-
-No final do arquivo `movies.pl`:
-
-1. Defina o predicado `drama_artist(A)`, que será verdadeiro se `A` for ator ou atriz em um filme de drama. 
-
-
-
-2. Defina o predicado `movieAgeByName(M, Age)`, em que `Age` será a idade (em anos) do filme de nome `M`, no ano atual. 
-
-
-
-3. Defina o predicado `recommend(U,M)`, para recomendar um filme de nome `M` a um usuário `U`. Este predicado será verdadeiro se for encontrado um filme do mesmo gênero de um filme apreciado (`like`) pelo usuário `U`.
-
-
-
-**Atenção!** Teste todos os predicados que você definir, observando se o resultado é igual ao esperado.
-
-
-
-### Consultas com listas
-
-Como já vimos, Prolog suporta listas nativamente.  No programa `movies.pl`, há alguns predicados que manipulam listas.
-
-
-Teste as seguintes consultas:
-
-
-1. Quais os gêneros de filmes na base de dados? A resposta será uma lista na variável G.
-
-   `?- allgenres(G).`
-
-2. Qual o primeiro gênero na lista? A resposta estará na variável H (head da lista G). 
-
-   `?- allgenres(G), G = [H | _].`
-
-3. Quantos são os gêneros de filmes na base de dados?
-   
-   `?- countgenres(C).`
-
-
-### Adicione regra com lista
-
-Com base nos códigos anteriores, adicione um predicado (definido por uma regra) para contar o número de usuários na base de dados.
 
 
 
