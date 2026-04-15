@@ -367,6 +367,10 @@ liascript-devserver --input README.md --port 3001 --live
 >
 > O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
 
+![Screenshot da landing page www.swi-prolog.org](img/swi-prolog.png)
+
+
+
 <script>
   window.goatcounter.count({
     path: "/elc117-2026a/classes/14",
@@ -634,13 +638,14 @@ Qual será o resultado da seguinte consulta?
 
 `?- movie(Id,tusk,_), actor(Id,Name).`
 
-Observações:
-- Usamos a variável `Id` para "conectar" as duas condições nesta consulta. 
-- Quando a execução do programa testar um valor para `Id` na primeira condição, este valor será mantido na segunda condição.
-- Note que o símbolo `_` é uma variável anônima, usada quando não queremos obter um valor para ela, mas apenas sinalizar que existe um argumento na posição.
 
 
 @[loadAndRun(prolog)](src/movies.pl)
+
+Observações:
+- Usamos a variável `Id` para "conectar" as duas condições nesta consulta. 
+- Quando a execução do programa testar um valor para `Id` na primeira condição, este valor será mantido na segunda condição.
+- Note que o símbolo `_` é uma **variável anônima**, usada quando não queremos obter um valor para ela, mas apenas sinalizar que existe um argumento na posição.
 
 
 ### Variável anônima (`_`)
@@ -702,6 +707,7 @@ Nestes exercícios:
 - as consultas vão utilizar os predicados definidos no programa, com argumentos constantes ou variáveis, de acordo com a pergunta
 - para encadear mais de um predicado/condição, use `,` para expressar um "e" lógico ou `;` para expressar um "ou" lógico
 
+@[loadAndRun(prolog)](src/movies.pl)
 
 Escreva estas consultas:
 
@@ -731,7 +737,7 @@ Escreva estas consultas:
 
 7. O ator `liam_neeson` é um ator de comédia?
 
-@[loadAndRun(prolog)](src/movies.pl)
+
 
 
 
@@ -757,6 +763,8 @@ No final do arquivo `movies.pl`:
 
 
 ### No Codespaces
+
+Para criar seu Codespace, acesse: https://classroom.github.com/a/5MTsip23
 
 Para realizar esses exercícios diretamente no SWI-Prolog, baixe o programa [movies.pl](src/movies.pl) no seu Codespace de Prolog:
 
@@ -793,12 +801,18 @@ wget https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/1
 
 ### Operador `=`
 
-- Não tem o mesmo sentido do `=` usado nas linguagens imperativas
+- **Não** tem o mesmo sentido do `=` usado nas linguagens imperativas
 - Usado para provocar unificação, geralmente com variáveis
 - Resultado pode ser `true`, `false` ou valores atribuídos a variáveis 
 
 
 ### Exemplos no SWI-Prolog
+
+``` prolog
+% Clique no botão e digite consultas abaixo:
+```
+@LIA.prolog_withShell
+
 
 ```
 ?- A = 1.
@@ -806,7 +820,17 @@ A = 1.
 
 ?- B = A + 1.
 B = A+1.
+```
 
+#### Com `is` (aritmética)
+
+``` prolog
+% Clique no botão e digite consultas abaixo:
+```
+@LIA.prolog_withShell
+
+
+```
 ?- B is A + 1.
 ERROR: Arguments are not sufficiently instantiated
 ERROR: In:
@@ -819,7 +843,16 @@ B = 2.
 
 ?- A = 1, A = A + 1.
 false.
+```
 
+#### Com listas
+
+``` prolog
+% Clique no botão e digite consultas abaixo:
+```
+@LIA.prolog_withShell
+
+```
 ?- L = [1,2], length(L,Len).
 L = [1, 2],
 Len = 2.
@@ -827,7 +860,16 @@ Len = 2.
 ?- L = [1,2,X], X is 2+1.
 L = [1, 2, 3],
 X = 3.
+```
 
+#### Com predicados
+
+``` prolog
+% Clique no botão e digite consultas abaixo:
+```
+@LIA.prolog_withShell
+
+```
 ?- casa(_, azul, _) = casa(bob, _, gato).
 true.
 
@@ -894,11 +936,22 @@ Teste as seguintes consultas:
 
 ### Adicione regra com lista
 
-Com base nos códigos anteriores, adicione um predicado (definido por uma regra) para contar o número de usuários na base de dados.
+Com base nos códigos anteriores, adicione um predicado (definido por uma regra) para **contar o número de usuários** (pessoas que gostam de filmes) na base de dados.
 
 @[loadAndRun(prolog)](src/movies.pl)
 
-<!-- allusers(Count) :- findall(U,likes(U,_),L), list_to_set(L,R), length(R, Count). -->
+
+<details>
+
+<summary style="color:Grey;font-size: smaller">Clique para ver uma solução</summary>
+
+`allusers(Count) :- findall(U, likes(U,_), L), list_to_set(L, R), length(R, Count).`
+
+
+</details> 
+
+
+
 
 ### Predicados com listas
 
