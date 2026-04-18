@@ -383,7 +383,6 @@ Verdadeiro ou falso: `randomRIO` é um exemplo de operação puramente determin�
 
 - [( )] Verdadeiro  
 - [(X)] Falso
-
 ******************************
 
 **Explicação:** essa função de geração de aleatoriedade, em Haskell, é tratada como algo que depende do mundo externo ou do estado do gerador aleatório, logo não é uma função pura comum.
