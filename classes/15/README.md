@@ -301,6 +301,55 @@ CodeRunner.send(
 </script>
 @end
 
+
+@loadAndRun
+<script style="display: block" modify="false" run-once="true">
+    const url = "@1"
+
+    let execute = ""
+    
+    try {
+      const [file, ending] = url.match(/[^\/]+$/)[0].split(".")
+
+      switch(ending) {
+        case "java": {
+          execute = "@LIA.java(" + file + ")"
+          break
+        }
+        case "c": {
+          execute = "@LIA.gcc"
+          break
+        }
+        case "pl": {
+          execute = "@LIA.prolog_withShell"
+          break
+        }
+      }
+      
+    } catch (e) {
+      console.warn("could not identify filename in", url)
+    }
+
+    fetch(url)
+    .then((response) => {
+        if (response.ok) {
+            response.text()
+            .then((text) => {
+
+                send.lia(`LIASCRIPT:
+\`\`\` @0
+${text}
+\`\`\`
+${execute}
+`)
+            })
+        } else {
+            send.lia("HTML: <span style='color: red'>Something went wrong, could not load <a href='@1'>@1</a></span>")
+        }
+    })
+    "loading: @1"
+</script>
+@end
 -->
 
 <!--
@@ -358,7 +407,7 @@ false.
 
 
 
-
+@[loadAndRun(prolog)](src/movies.pl)
 
 
 
@@ -390,7 +439,7 @@ Actress = jennifer_lawrence.
 ***********************
 
 
-
+@[loadAndRun(prolog)](src/movies.pl)
 
 
 #### 3. Ano de lançamento
@@ -419,6 +468,9 @@ Idade = 23.
 
 ***********************
 
+@[loadAndRun(prolog)](src/movies.pl)
+
+
 
 ### Segunda parte: regras
 
@@ -439,6 +491,7 @@ Este predicado precisa de um "ou" (`;`) entre os predicados `actor` e `actress`.
 ***********************
 
 
+@[loadAndRun(prolog)](src/movies.pl)
 
 
 #### 5. `recommend`
@@ -466,7 +519,7 @@ Este predicado:
 
 
 
-
+@[loadAndRun(prolog)](src/movies.pl)
 
 
 
@@ -586,6 +639,9 @@ No final do arquivo `songs.pl`:
   ```
 
 
+@[loadAndRun(prolog)](src/songs.pl)
+
+
 ### 2. Filter (recursão)
 
 - Adicione o predicado recursivo `filterShorts(L1, L2)`, em que `L1` é uma lista de números `L1` e  `L2` é uma lista contendo somente os números menores que `200` de `L1`.
@@ -626,15 +682,24 @@ No final do arquivo `songs.pl`:
   ```
 
 
+@[loadAndRun(prolog)](src/songs.pl)
+
+
+
 ### 3. Músicas curtas (consulta)
 
 - Escreva uma consulta para obter os nomes das músicas cuja duração seja menor que 200 segundos.
+
+
+@[loadAndRun(prolog)](src/songs.pl)
+
 
 ### 4. Músicas curtas (regra)
 
 - Adicione um predicado `short(Song)` que seja verdadeiro se `Song` for uma música com duração menor que 200 segundos.
 
 
+@[loadAndRun(prolog)](src/songs.pl)
 
 
 ## Bibliografia
