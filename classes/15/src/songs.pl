@@ -7,6 +7,10 @@
      duration/3,
      artist/2.
 
+% song/2: fatos na forma song(SongName, Year)
+% duration/3: fatos na forma duration(SongName, Minutes, Seconds)
+% artist/2: fatos na forma artist(SongName, ArtistName)
+
 
 song(thats_my_way,2013).
 duration(thats_my_way,5,39).
@@ -28,7 +32,6 @@ song(miss_you,2022).
 duration(miss_you,3,26).
 artist(miss_you,oliver_tree).
 
-
 song(apenas_um_rapaz_latino_americano,1976).
 duration(apenas_um_rapaz_latino_americano,4,18).
 artist(apenas_um_rapaz_latino_americano,belchior).
@@ -41,11 +44,9 @@ song(while_your_lips_are_still_red,2008).
 duration(while_your_lips_are_still_red,4,18).
 artist(while_your_lips_are_still_red,nightwish).
 
-
 song(tempo_ruim,2006).
 duration(tempo_ruim,2,42).
 artist(tempo_ruim,matanza).
-
 
 song(feeling_whitney,2016).
 duration(feeling_whitney,4,17).
@@ -58,7 +59,6 @@ artist(just,radiohead).
 song(i_need_u,2015).
 duration(i_need_u,3,30).
 artist(i_need_u,bts).
-
 
 song(i_kissed_a_girl,2008).
 duration(i_kissed_a_girl,2,59).
