@@ -630,7 +630,7 @@ artist(die_with_a_smile,lady_gaga).
 
 No final do arquivo `songs.pl`:
 
-- Defina o predicado `duration_in_secs(SongName, Secs)`, de forma que `Secs` seja a duração da música `SongName` em segundos. Lembre de usar `is` para aritmética em Prolog.
+- Defina o predicado `duration_in_secs(SongName, TotalSecs)`, de forma que `TotalSecs` seja a duração total da música `SongName` em segundos. Lembre de usar `is` para aritmética em Prolog.
 
 - Adicione o seguinte predicado para testar seu código:
 
@@ -696,7 +696,7 @@ No final do arquivo `songs.pl`:
 
 ### 3. Músicas curtas (consulta)
 
-- Escreva uma consulta para obter os nomes das músicas cuja duração seja menor que 200 segundos.
+- Escreva uma consulta para obter os nomes das músicas cuja duração total seja menor que 200 segundos.
 
 
 @[loadAndRun(prolog)](src/songs.pl)
@@ -704,7 +704,7 @@ No final do arquivo `songs.pl`:
 
 ### 4. Músicas curtas (regra)
 
-- Adicione um predicado `short(Song)` que seja verdadeiro se `Song` for uma música com duração menor que 200 segundos.
+- Adicione um predicado `short(Song)` que seja verdadeiro se `Song` for uma música com duração total menor que 200 segundos.
 
 
 @[loadAndRun(prolog)](src/songs.pl)
