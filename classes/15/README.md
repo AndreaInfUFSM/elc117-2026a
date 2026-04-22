@@ -358,7 +358,7 @@ liascript-devserver --input README.md --port 3001 --live
 -->
 
 
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/14/README.md)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/15/README.md)
 
 
 # Programação Lógica (3)
@@ -370,6 +370,14 @@ liascript-devserver --input README.md --port 3001 --live
 > Este material é parte uma introdução ao paradigma de **programação lógica** em linguagem Prolog.
 >
 > O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
+
+
+<script>
+  window.goatcounter.count({
+    path: "/elc117-2026a/classes/15",
+    title: "/elc117-2026a/classes/15"
+  })
+</script>
 
 
 ## Quizzes sobre a prática
@@ -700,6 +708,12 @@ No final do arquivo `songs.pl`:
 
 
 @[loadAndRun(prolog)](src/songs.pl)
+
+
+## Processo de execução (Depth First Search)
+
+- Depth-first search - Tree traversal Algorithm - 3D Animation: https://www.youtube.com/shorts/L9uGg_aUIY4
+- Visualização simulada de execução Prolog: https://andreainfufsm.github.io/demo-prolog-dfs-2026a/
 
 
 ## Bibliografia
