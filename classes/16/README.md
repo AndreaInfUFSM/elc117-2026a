@@ -298,6 +298,58 @@ CodeRunner.send(
 </script>
 @end
 
+
+
+@loadAndRun
+<script style="display: block" modify="false" run-once="true">
+    const url = "@1"
+
+    let execute = ""
+    
+    try {
+      const [file, ending] = url.match(/[^\/]+$/)[0].split(".")
+
+      switch(ending) {
+        case "java": {
+          execute = "@LIA.java(" + file + ")"
+          break
+        }
+        case "c": {
+          execute = "@LIA.gcc"
+          break
+        }
+        case "pl": {
+          execute = "@LIA.prolog_withShell"
+          break
+        }
+      }
+      
+    } catch (e) {
+      console.warn("could not identify filename in", url)
+    }
+
+    fetch(url)
+    .then((response) => {
+        if (response.ok) {
+            response.text()
+            .then((text) => {
+
+                send.lia(`LIASCRIPT:
+\`\`\` @0
+${text}
+\`\`\`
+${execute}
+`)
+            })
+        } else {
+            send.lia("HTML: <span style='color: red'>Something went wrong, could not load <a href='@1'>@1</a></span>")
+        }
+    })
+    "loading: @1"
+</script>
+@end
+
+
 -->
 
 <!--
@@ -343,6 +395,10 @@ Considerando a base de fatos e regras da aula passada ([songs.pl](https://raw.gi
 - [(x)] Obtém todos dados de músicas cuja duração é menor que 200 segundos.
 - [( )] Obtém apenas os nomes das músicas cuja duração é menor que 200 segundos.
 
+
+@[loadAndRun(prolog)](src/songs.pl)
+
+
 ### Questão 2
 
 Suponha que se deseje obter **apenas os nomes** de todas as músicas com 3 minutos ou mais de duração. Qual regra pode ser definida para auxiliar nisso?
@@ -350,6 +406,10 @@ Suponha que se deseje obter **apenas os nomes** de todas as músicas com 3 minut
    - [(x)] `regra(Song) :- duration(Song, M, _), M >= 3.`
    - [( )] `regra(M) :- duration(Song, M, _), M >= 3.`
    - [( )] `regra(Song) :- duration(Musica, Minutos, _), Minutos >= 3.`
+
+
+@[loadAndRun(prolog)](src/songs.pl)
+
 
 ### Questão 3
 
@@ -451,7 +511,7 @@ Avance para ver alguns exemplos de regras que usam `[H|T]`.
 
 #### `fstMystery/2`
 
-Regra que verifica se duas listas têm a mesma "head"
+O que está definido nesta regra?
 
 Definição:
 
@@ -481,8 +541,7 @@ true.
 
 #### `sndMystery/3`
 
-Regra que gera lista com "head"s de outras 2 listas:
-
+O que está definido nesta regra?
 
 ``` prolog
 sndMystery(L1, L2, L3) :-
@@ -508,7 +567,7 @@ L = [1,4].
 
 #### `trdMystery/2`
 
-Regra que gera nova lista com quadrado do "head" da primeira lista
+O que está definido nesta regra?
 
 ``` prolog
 trdMystery(L1,L2) :-
@@ -539,7 +598,10 @@ A seguir, alguns exemplos de uso da notação `[H|T]` para expressar predicados 
 
 #### `sum/2`
 
+
 Somatório de elementos de uma lista
+
+> Por que o predicado `sum` é definido por 2 regras?
 
 ``` prolog
 sum(L,S) :-
@@ -566,6 +628,9 @@ sum([H|T], S) :-
 #### `tamanho/2`
 
 Quantidade de elementos de uma lista
+
+> Por que o predicado `tamanho` é definido por um fato e uma regra?
+
 
 ``` prolog
 tamanho([], 0).
