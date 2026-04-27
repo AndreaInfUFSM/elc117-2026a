@@ -15,9 +15,6 @@ comment:  Material de apoio para a disciplina
 
 translation: English  translations/English.md
 
-link:     https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.css
-
-script:   https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js
 
 link:     https://cdn.jsdelivr.net/gh/AndreaInfUFSM/elc117-2026a@main/assets/css/custom.css
 
@@ -309,7 +306,7 @@ liascript-devserver --input README.md --port 3001 --live
 -->
 
 
-[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/15/README.md)
+[![LiaScript](https://raw.githubusercontent.com/LiaScript/LiaScript/master/badges/course.svg)](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/16/README.md)
 
 
 # Programação Lógica (4)
@@ -322,104 +319,66 @@ liascript-devserver --input README.md --port 3001 --live
 >
 > O conteúdo tem partes interativas e pode ser visualizado de vários modos usando as opções no topo da página.
 
-
-
-## Prática
-
-Nesta prática, você vai completar um programa Prolog para desvendar um mistério: a autoria de um crime! 🤪
-
-### O crime
-
-No final de uma festa no oitavo andar do Hotel "Paradigm Palace", o milionário Sr. Dollars foi assassinado! Todas as pessoas presentes no final da festa foram imediatamente detidas como suspeitas: eram 2 homens (Bob e Dave) e 2 mulheres (Alice e Carol). Cada suspeito estava hospedado em uma destas suítes do oitavo andar: 801, 802, 803 e 804. Em cada suíte, foi encontrada uma arma: Faca, Revólver, Corda e Veneno. As suítes se localizavam em sequência no corredor do oitavo andar, uma ao lado da outra.
-
-Para desvendar este crime, você precisa deduzir onde cada pessoa estava e qual arma foi encontrada em cada suíte. 
-
-As pistas são as seguintes:
-
-1. A pessoa com a Corda estava no quarto 803.
-2. Alice estava com o Revólver.
-3. Carol estava num quarto de número par.
-4. Alice e Bob não estavam em quartos adjacentes.
-5. Nenhum dos homens estava com o Veneno.
-6. Dave estava com a Faca.
-7. Uma das mulheres estava no último quarto.
-8. Quem cometeu o assassinato estava hospedado no quarto 802.
-
-> Quem matou o Sr. Dollars e qual arma foi usada?
-
-
-### O programa
-
-- Obtenha o programa [notel-muder-incompleto.pl](src/hotel-murder-incompleto.pl):
-
-  ``` bash
-  wget https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/16/src/hotel-murder-incompleto.pl
-  ```
-
-- Adicione uma regra `even(N)` para determinar se um número N é par. Dica: Em Prolog, [mod](https://www.swi-prolog.org/pldoc/man?function=mod/2) serve para calcular o resto de uma divisão inteira.
-
-- O programa fornecido não expressa todas as condições/pistas. Descubra qual está faltando e adicione-a no programa.
-
-
-``` prolog
-
-solution(Rooms, Assassin, Weapon) :-
-  Rooms = [room(801, _, _), room(802, _, _), room(803, _, corda), room(804, _, _)],  
-  member(room(_, alice, revolver), Rooms), 
-  member(room(_, bob, _), Rooms),     
-  member(room(N, carol, _), Rooms),   
-  even(N),                           
-  not(nextto(room(_, alice, _),room(_, bob, _), Rooms)), 
-  not(nextto(room(_, bob,_), room(_, alice, _), Rooms)), 
-  member(room(_, _, veneno), Rooms),  
-  not(member(room(_, dave, veneno), Rooms)),
-  not(member(room(_, bob, veneno), Rooms)),            
-  (member(room(804, carol, _), Rooms); member(room(804, alice, _), Rooms)), 
-  member(room(802, Assassin, Weapon), Rooms).
-```
-@LIA.prolog_withShell
+<script>
+  window.goatcounter.count({
+    path: "/elc117-2026a/classes/16",
+    title: "/elc117-2026a/classes/16"
+  })
+</script>
 
 ## Quiz
 
-1. Considerando a base de fatos e regras da aula passada ([songs.pl](https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/14/src/songs.pl)), o que faz a consulta abaixo?
+Avance para ver as questões.
+
+### Questão 1
+
+Considerando a base de fatos e regras da aula passada ([songs.pl](https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/15/src/songs.pl)), o que faz a consulta abaixo?
 
 
-   ``` prolog
-   ?- duration(Song,M,S), Secs is M*60 + S, Secs < 200.
-   ```
+``` prolog
+?- duration(Song,M,S), Secs is M*60 + S, Secs < 200.
+```
 
-   - [( )] Causa um erro devido a uma variável não definida.
-   - [(x)] Obtém todos dados de músicas cuja duração é menor que 200 segundos.
-   - [( )] Obtém apenas os nomes das músicas cuja duração é menor que 200 segundos.
+- [( )] Causa um erro devido a uma variável não definida.
+- [(x)] Obtém todos dados de músicas cuja duração é menor que 200 segundos.
+- [( )] Obtém apenas os nomes das músicas cuja duração é menor que 200 segundos.
 
+### Questão 2
 
-2. Suponha que se deseje obter apenas os nomes de todas as músicas com 3 minutos ou mais de duração. Qual regra pode ser definida para auxiliar nisso?
+Suponha que se deseje obter **apenas os nomes** de todas as músicas com 3 minutos ou mais de duração. Qual regra pode ser definida para auxiliar nisso?
 
    - [(x)] `regra(Song) :- duration(Song, M, _), M >= 3.`
    - [( )] `regra(M) :- duration(Song, M, _), M >= 3.`
    - [( )] `regra(Song) :- duration(Musica, Minutos, _), Minutos >= 3.`
 
+### Questão 3
 
-3. Qual será o resultado da consulta `?- [3,2,1] = [A|B].`?
+Qual será o resultado da consulta `?- [3,2,1] = [A|B].`?
 
    - [( )] [1, 2, 3]
    - [( )] false
    - [(x)] A = 3, B = [2, 1]
 
+### Questão 4
 
-4. Qual será o resultado da consulta `?- [4,5,6] = [4,5,L].`?
+Qual será o resultado da consulta `?- [4,5,6] = [4,5,L].`?
 
    - [( )] true
    - [(x)] L = 6
    - [( )] [6]
    - [( )] false
 
-5. Qual será o resultado da consulta `?- [4,5,6] = [4,5,L,6].`?
+### Questão 5
+
+Qual será o resultado da consulta `?- [4,5,6] = [4,5,L,6].`?
 
    - [( )] true
    - [( )] L = 6
    - [( )] [6]
    - [(x)] false
+
+
+
 
 ## Listas com `[H|T]`
 
@@ -440,22 +399,22 @@ Exemplos:
 No interpretador SWI-Prolog:
 
 ```
-?- A=[1|[2,3]].
+?- A = [1|[2,3]].
 A = [1, 2, 3].
 
-?- [a,b,c]=[H|T].
+?- [a,b,c] = [H|T].
 H = a,
 T = [b, c].
 
-?- [a,b,c]=[H|T].
+?- [a,b,c] = [H|T].
 H = a,
 T = [b, c].
 
-?- [1,2]=[X|Y].
+?- [1,2] = [X|Y].
 X = 1,
 Y = [2].
 
-?- [H|T]=[movie(the_avengers)].
+?- [H|T] = [movie(the_avengers)].
 H = movie(the_avengers),
 T = [].
 ```
@@ -490,14 +449,14 @@ T = [].
 Avance para ver alguns exemplos de regras que usam `[H|T]`.
 
 
-#### `hasEqHeads/2`
+#### `fstMystery/2`
 
 Regra que verifica se duas listas têm a mesma "head"
 
 Definição:
 
 ``` prolog
-hasEqHeads(L1, L2) :-
+fstMystery(L1, L2) :-
   L1 = [H1|_],
   L2 = [H2|_],
   H1 = H2.
@@ -506,27 +465,27 @@ hasEqHeads(L1, L2) :-
 Alternativa abreviada:
 
 ``` prolog
-hasEqHeads([H|_], [H|_]).
+fstMystery([H|_], [H|_]).
 ```
 
 Uso no SWI-Prolog:
 
 ``` prolog
-?- hasEqHeads([1,2,3],[2,3,4]).
+?- fstMystery([1,2,3],[2,3,4]).
 false.
 
-?- hasEqHeads([a,2,3],[a,3,4]).
+?- fstMystery([a,2,3],[a,3,4]).
 true.
 ```
 
 
-#### `getHeads/3`
+#### `sndMystery/3`
 
 Regra que gera lista com "head"s de outras 2 listas:
 
 
 ``` prolog
-getHeads(L1, L2, L3) :-
+sndMystery(L1, L2, L3) :-
   L1 = [H1|_],
   L2 = [H2|_],
   L3 = [H1, H2].
@@ -535,24 +494,24 @@ getHeads(L1, L2, L3) :-
 Alternativa abreviada:
 
 ``` prolog
-getHeads([H1|_], [H2|_], [H1, H2]).
+sndMystery([H1|_], [H2|_], [H1, H2]).
 ```
 
 
 Uso no SWI-Prolog:
 
 ``` prolog
-?- getHeads([1,2],[4,5],L).
+?- sndMystery([1,2],[4,5],L).
 L = [1,4].
 ```
 
 
-#### `doubleHead/2`
+#### `trdMystery/2`
 
 Regra que gera nova lista com quadrado do "head" da primeira lista
 
 ``` prolog
-doubleHead(L1,L2) :-
+trdMystery(L1,L2) :-
   L1 = [H|T],
   D is H*H,
   L2 = [D|T].
@@ -561,14 +520,14 @@ doubleHead(L1,L2) :-
 Alternativa abreviada:
 
 ``` prolog
-doubleHead([H|T],[H*H|T]).
+trdMystery([H|T],[H*H|T]).
 ``` 
 
 
 Uso no SWI-Prolog:
 
 ``` prolog
-?- doubleHead([2,3,4],L).
+?- trdMystery([2,3,4],L).
 L = [4,3,4].
 ```
 
@@ -684,6 +643,60 @@ filterEven([H|T],L) :-
 ```
 
 
+## Prática
+
+Nesta prática, você vai completar um programa Prolog para desvendar um mistério: a autoria de um crime! 🤪
+
+### O crime
+
+No final de uma festa no oitavo andar do Hotel "Paradigm Palace", o milionário Sr. Dollars foi assassinado! Todas as pessoas presentes no final da festa foram imediatamente detidas como suspeitas: eram 2 homens (Bob e Dave) e 2 mulheres (Alice e Carol). Cada suspeito estava hospedado em uma destas suítes do oitavo andar: 801, 802, 803 e 804. Em cada suíte, foi encontrada uma arma: Faca, Revólver, Corda e Veneno. As suítes se localizavam em sequência no corredor do oitavo andar, uma ao lado da outra.
+
+Para desvendar este crime, você precisa deduzir onde cada pessoa estava e qual arma foi encontrada em cada suíte. 
+
+As pistas são as seguintes:
+
+1. A pessoa com a Corda estava no quarto 803.
+2. Alice estava com o Revólver.
+3. Carol estava num quarto de número par.
+4. Alice e Bob não estavam em quartos adjacentes.
+5. Nenhum dos homens estava com o Veneno.
+6. Dave estava com a Faca.
+7. Uma das mulheres estava no último quarto.
+8. Quem cometeu o assassinato estava hospedado no quarto 802.
+
+> Quem matou o Sr. Dollars e qual arma foi usada?
+
+
+### O programa
+
+- Obtenha o programa [notel-muder-incompleto.pl](src/hotel-murder-incompleto.pl):
+
+  ``` bash
+  wget https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/16/src/hotel-murder-incompleto.pl
+  ```
+
+- Adicione uma regra `even(N)` para determinar se um número N é par. Dica: Em Prolog, [mod](https://www.swi-prolog.org/pldoc/man?function=mod/2) serve para calcular o resto de uma divisão inteira.
+
+- O programa fornecido não expressa todas as condições/pistas. Descubra qual está faltando e adicione-a no programa.
+
+
+``` prolog
+
+solution(Rooms, Assassin, Weapon) :-
+  Rooms = [room(801, _, _), room(802, _, _), room(803, _, corda), room(804, _, _)],  
+  member(room(_, alice, revolver), Rooms), 
+  member(room(_, bob, _), Rooms),     
+  member(room(N, carol, _), Rooms),   
+  even(N),                           
+  not(nextto(room(_, alice, _),room(_, bob, _), Rooms)), 
+  not(nextto(room(_, bob,_), room(_, alice, _), Rooms)), 
+  member(room(_, _, veneno), Rooms),  
+  not(member(room(_, dave, veneno), Rooms)),
+  not(member(room(_, bob, veneno), Rooms)),            
+  (member(room(804, carol, _), Rooms); member(room(804, alice, _), Rooms)), 
+  member(room(802, Assassin, Weapon), Rooms).
+```
+@LIA.prolog_withShell
 
 
 ## Bibliografia

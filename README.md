@@ -206,7 +206,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>27/04/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação lógica (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/16/README.md">Programação lógica com Prolog</a>: exercícios e mais exemplos com listas</li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim1-2026a-RafaelSantos022">Rafael S.</a> e <a href="https://github.com/elc117/apresentacao-bim1-2026a-">Samuel C.</a></li>
 </ul></td>
 </tr>
 
