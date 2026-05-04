@@ -225,7 +225,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>04/05/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Discussão dos resultados das avaliações.</li>
+<li>Discussão dos <a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/18/README.md">resultados das avaliações</a></li>
 </ul></td>
 </tr>
 
