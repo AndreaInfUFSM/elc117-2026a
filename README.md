@@ -234,7 +234,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>06/05/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação orientada a objetos.</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/19/README.md">Programação orientada a objetos</a>: introdução usando Java</li>
 </ul></td>
 </tr>
 

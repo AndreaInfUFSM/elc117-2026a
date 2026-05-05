@@ -311,7 +311,12 @@ liascript-devserver --input README.md --port 3001 --live
 
 # Resultados: prova de leitura de código
 
-
+<script>
+  window.goatcounter.count({
+    path: "/elc117-2026a/classes/18",
+    title: "/elc117-2026a/classes/18"
+  })
+</script>
 
 <svg viewBox="0 0 520 190" width="100%" role="img" aria-label="Bimester grade composition: exam 50 percent, assessment 1 20 percent, assessment 2 30 percent" xmlns="http://www.w3.org/2000/svg">
   <style>
