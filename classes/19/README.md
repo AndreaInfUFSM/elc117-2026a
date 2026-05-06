@@ -454,6 +454,11 @@ Executar (JVM):
 java HelloWorld
 ```
 
+### Uma entrevista
+
+Equipe do Nubank entrevistando James Gosling em 2022: https://building.nubank.com/talk-james-gosling-java-at-nubank/
+
+!?[](https://www.youtube.com/watch?v=ftDBp_BVWzw)
 
 ## Atividade de compreensão de código
 
