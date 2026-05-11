@@ -615,7 +615,52 @@ c.area();
 ```
 
 
+#### Quiz
 
+1. Geralmente, uma classe em Java é apresentada como um "molde" para objetos. O que isso significa?
+
+[( )] Um espaço de memória reservado automaticamente para armazenar valores durante a execução.
+[(X)] Uma estrutura que descreve características e comportamentos que objetos poderão ter.
+[( )] Um conjunto de valores já preenchidos que representa um objeto específico.
+***********************
+
+Uma classe define um tipo de objeto, indicando quais atributos e métodos os objetos criados a partir dela poderão ter.
+
+***********************
+
+
+
+
+2. Considere o código Java:
+
+``` java
+Circle c;
+c = new Circle();
+```
+
+O que acontece na segunda linha?
+
+
+[( )] A classe Circle é copiada para dentro da variável c para poder ser usada depois.
+[( )] Um novo tipo chamado c é definido com base na estrutura da classe Circle.
+[(X)] A variável c passa a se referir a um novo objeto criado a partir da classe Circle.
+[( )] O método principal da classe Circle é executado e seu resultado é guardado em c.
+***********************
+
+`new Circle()` cria um objeto, e a variável c passa a guardar uma referência para esse objeto.
+
+***********************
+
+
+3. Em Java, quanto um objeto não é mais usado, é necessário escrever algum código para liberar a memória alocada?
+
+[( )] Sim
+[(X)] Não
+***********************
+
+Não, pois Java tem _garbage collector_ (coletor de lixo automático).
+
+***********************
 
 ### Construtores
 
@@ -630,9 +675,9 @@ Sintaxe em Java:
 
 - Mesmo nome da classe
 - Sem tipo de retorno
-- Podem existir vários construtores, diferenciados pelos tipos dos argumentos
+- Podem existir **vários construtores**, diferenciados pelos tipos dos argumentos
 
-Exemplo de classe com construtor:
+Exemplo de classe com construtor e construtor chamado na criação do objeto:
 
 ``` java
 class Circle {
@@ -648,12 +693,6 @@ class Circle {
     return 3.1416 * r * r;
   }
 }
-```
-
-Construtor chamado na criação do objeto:
-
-
-``` java
 class TestCircle {
   public static void main(String[] args) {
     // construtor chamado aqui
@@ -662,6 +701,8 @@ class TestCircle {
   }
 }
 ```
+@LIA.java(TestCircle)
+
 
 #### Por quê?
 
@@ -705,7 +746,15 @@ class Circle {
      return 3.1416 * r * r;
   }
 }
+class TestCircle {
+  public static void main(String[] args) {
+    // construtor chamado aqui
+    Circle c = new Circle(); 
+    System.out.println(c.area());    
+  }
+}
 ```
+@LIA.java(TestCircle)
 
 ### Modificadores de acesso
 
@@ -717,8 +766,10 @@ São palavras-chave (por exemplo `private`, `public`, etc.) que especificam a vi
 | boas práticas: manter atributos privados   | boas práticas: métodos públicos para manipulação  |
 
 
+#### Exemplo
 
-Exemplo: Podemos acessar `r` livremente dentro da classe Circle
+- Podemos acessar `r` livremente dentro da classe Circle
+- Fora da classe Circle, não podemos acessar `r`
 
 ``` java
 class Circle {
@@ -729,11 +780,6 @@ class Circle {
      return 3.1416 * r * r;
   }
 }
-```
-
-Exemplo: Fora da classe Circle, não podemos acessar `r`
-
-``` java
 class TestCircle {
   public static void main(String[] args) {
     Circle c = new Circle();    
@@ -742,6 +788,8 @@ class TestCircle {
   }
 }
 ```
+@LIA.java(TestCircle)
+
 
 #### Por quê?
 
@@ -753,6 +801,37 @@ Por que linguagens orientadas a objetos costumam ter modificadores de acesso em 
 
 
 (*) Modificadores também podem se aplicar a uma classe inteira dentro de um pacote.
+
+### Quiz
+
+
+1. Em uma classe Java, qual é o papel principal de um construtor?
+
+[( )] Executar qualquer método público da classe automaticamente, sempre que ele for chamado.
+[( )] Definir quais atributos da classe poderão ser acessados por outras classes.
+[( )] Substituir a declaração dos atributos, evitando que eles precisem aparecer no início da classe.
+[(X)] Inicializar um novo objeto, atribuindo valores iniciais aos seus atributos quando ele é criado.
+***********************
+
+Um construtor é executado quando um novo objeto é criado com `new`. Ele pode receber parâmetros e usar esses valores para inicializar os atributos do objeto.
+
+***********************
+
+
+
+2. Considere uma classe `Circle` com o atributo `private double r;`. Qual o efeito do modificador `private` nessa classe?
+
+[( )] O atributo `r` pode ser acessado diretamente por qualquer classe, desde que o objeto já tenha sido criado.
+[(X)] O atributo `r` só pode ser acessado diretamente dentro da própria classe `Circle`.
+[( )] O atributo `r` pertence à classe, e não a cada objeto individualmente.
+[( )] O atributo `r` será inicializado automaticamente sempre que o método `area()` for chamado.
+***********************
+
+O modificador `private` restringe o acesso direto ao atributo à própria classe. Outras classes devem interagir com esse dado por meio de métodos definidos pela classe, quando esses métodos existirem.
+
+***********************
+
+
 
 ## Prática em Java
 
