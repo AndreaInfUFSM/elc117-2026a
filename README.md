@@ -243,7 +243,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>11/05/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação orientada a objetos (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/20/README.md">Programação orientada a objetos em Java</a>: encapsulamento, classe, objeto, construtores, referências para objetos, modificadores de acesso</li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim2-2026a-HLKellermann">Helena</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-laulugoch">Lauren</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-renatasfon">Renata</a> e <a href="https://github.com/elc117/apresentacao-bim2-2026a-sofiatonetto">Sofia V.</a></li>
 </ul></td>
 </tr>
 

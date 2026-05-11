@@ -21,7 +21,7 @@ li::marker {
 /* Two-column slide layout */
 .two-col {
   display: grid !important;
-  grid-template-columns: 0.7fr 1.3fr !important;
+  grid-template-columns: 1.3fr 0.7fr !important;
   gap: 2rem !important;
   align-items: start !important;
   width: 100% !important;
@@ -46,7 +46,7 @@ li::marker {
 .two-col--image-right img {
   display: block !important;
   max-width: 100% !important;
-  max-height: 28vh !important;
+  max-height: 58vh !important;
   width: 100% !important;
   height: auto !important;
   object-fit: contain !important;
@@ -90,6 +90,7 @@ li::marker {
     max-height: 40vh !important;
   }
 }
+
 
 
 
