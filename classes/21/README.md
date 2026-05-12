@@ -557,7 +557,7 @@ class ListOfCircles {
 
 2. Analise as classes `Point` e `Circle`. Note que cada uma delas é uma classe bem simples, como as que vimos na aula anterior.
 
-3. Analise a classe `ListOfCircles`, que contém novidades. Veja que esta classe usa a classe `ArrayList`, que representa uma estrutura de dados muito útil. Para usá-la, temos que primeiro criar um objeto da classe `ArrayList`, e depois usar métodos públicos desta classe para adicionar elementos ou fazer outras operações com a lista. 
+3. Analise a classe `ListOfCircles`, que contém uma **novidade** (não vista até agora): a classe **`ArrayList`**, que representa uma estrutura de dados muito útil. Para usá-la, temos que primeiro criar um objeto da classe `ArrayList`, e depois usar métodos públicos desta classe para adicionar elementos ou fazer outras operações com a lista. 
 
 4. Veja [aqui](https://www.w3schools.com/java/java_arraylist.asp) algumas operações possíveis de realizar com uma `ArrayList`. 
 
@@ -653,6 +653,20 @@ class ListOfTeamMates {
 ```
 @LIA.java(ListOfCircles)
 
+
+Relembrando os exercícios do slide anterior:
+
+1. Crie a classe `ListOfTeamMates` que deverá ter um método `main`.  Siga exatamente a sintaxe usada nos outros exemplos que definem este método: `public static void main(String[] args)`.
+
+2. Dentro do método `main`, crie um objeto da classe `ArrayList<TeamMate>` para representar uma lista de colegas de equipe.
+
+3. Crie vários objetos da classe `TeamMate`, usando qualquer lógica à sua escolha para setar os atributos de cada `TeamMate`. Adicione todos os objetos na lista.
+
+4. Percorra a lista e mostre o nome de cada `TeamMate` armazenado.
+
+5. Percorra a lista e mostre o `userId` dos `TeamMate` que estiverem `online`.
+
+6. Consulte [aqui](https://www.w3schools.com/java/java_arraylist.asp) outros métodos disponíveis na classe `ArrayList` e utilize algum que não tenha sido usado antes.
 
 ## Parte 3: Groups
 

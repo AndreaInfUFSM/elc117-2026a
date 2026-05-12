@@ -253,7 +253,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>13/05/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação orientada a objetos.</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/21/README.md">Exercícios de programação orientada a objetos em Java</a>: encapsulamento, classe, objeto, construtores, referências para objetos, modificadores de acesso</li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim2-2026a-albertoalves34">Alberto</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-davi-p-libardoni">Davi</a> e <a href="https://github.com/elc117/apresentacao-bim2-2026a-nicolas-stroher">Nicolas</a></li>
 </ul></td>
 </tr>
 
