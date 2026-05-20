@@ -273,8 +273,8 @@ Dinâmica de acolhimento da turma.</li>
 <td>20/05/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação orientada a objetos.</li>
-</ul></td>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/23/README.md">Programação orientada a objetos em Java</a>: polimorfismo</li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim2-2026a-">Diogo</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-">Gabriel S.</a> e <a href="https://github.com/elc117/apresentacao-bim2-2026a-samue345">Samuel N.</a></li></ul></td>
 </tr>
 
 <tr>
