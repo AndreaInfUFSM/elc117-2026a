@@ -282,7 +282,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>25/05/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação orientada a objetos (lab).</li>
+<li>Programação orientada a objetos em <a href="recomenda-equipes.svg">Serviço de Recomendação de Equipes</a>. GitHub Classroom: <a href="https://classroom.github.com/a/WrZIJYJz">https://classroom.github.com/a/WrZIJYJz</a></li>
 </ul></td>
 </tr>
 
