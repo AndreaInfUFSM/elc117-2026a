@@ -282,7 +282,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>25/05/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação orientada a objetos em <a href="classes/24/recomenda-equipes.svg">Serviço de Recomendação de Equipes</a>. GitHub Classroom: <a href="https://classroom.github.com/a/WrZIJYJz">https://classroom.github.com/a/WrZIJYJz</a></li>
+<li>Programação orientada a objetos em <a href="classes/24/recomenda-equipes.png">Serviço de Recomendação de Equipes</a>. GitHub Classroom: <a href="https://classroom.github.com/a/WrZIJYJz">https://classroom.github.com/a/WrZIJYJz</a></li>
 </ul></td>
 </tr>
 
@@ -291,7 +291,9 @@ Dinâmica de acolhimento da turma.</li>
 <td>27/05/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação orientada a objetos.</li>
+<li>Aplicações da programação orientada a objetos em Java: frameworks <a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/libgdx/README.md">libGDX</a> e <a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/elc117/demo-javalin-codespace-2026a/main/README.md">Javalin</a></li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim2-2026a-AkkoHanabara">Bernardo C.</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-bernardo-rizzardi">Bernardo B.</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-cedricmr">Cedric</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-deividtrindade777">Deivid</a> e <a href="https://github.com/elc117/apresentacao-bim2-2026a-EmanuelCristo">Emanuel</a></li>
+<li>Especificação do <a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/25/README.md">projeto final</a></li>
 </ul></td>
 </tr>
 
@@ -300,7 +302,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>01/06/2026</td>
 <td>Seg</td>
 <td><ul>
-<li>Programação concorrente e orientada a objetos (lab).</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/26/README.md">Programação concorrente e orientada a objetos.</a></li>
 </ul></td>
 </tr>
 
@@ -309,7 +311,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>03/06/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Programação concorrente e orientada a objetos.</li>
+<li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/27/README.md">Programação concorrente e orientada a objetos.</a></li>
 </ul></td>
 </tr>
 
@@ -339,16 +341,15 @@ Dinâmica de acolhimento da turma.</li>
 </tr>
 
 <tr>
-<td align="right">29</td>
+<td align="right">-</td>
 <td>17/06/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Apresentações de trabalhos finais de programação.</li>
 </ul></td>
 </tr>
 
 <tr>
-<td align="right">30</td>
+<td align="right">29</td>
 <td>22/06/2026</td>
 <td>Seg</td>
 <td><ul>
@@ -357,11 +358,11 @@ Dinâmica de acolhimento da turma.</li>
 </tr>
 
 <tr>
-<td align="right">-</td>
+<td align="right">30</td>
 <td>24/06/2026</td>
 <td>Qua</td>
 <td><ul>
-<li>Atividades de recuperação de avaliações.</li>
+<li>Apresentações de trabalhos finais de programação.</li>
 </ul></td>
 </tr>
 
@@ -392,9 +393,9 @@ Primeiro bimestre:
 Segundo bimestre:
 
 - Apresentação de exercícios (peso 2)
-- Projeto final de programação (peso 8): apresentações finais em 17 e 22/06
+- Projeto final de programação (peso 8): apresentações finais em ~~17~~ 22 e 24/06
 
-Avaliações finais / atividades de recuperação de avaliações: 24 e 29/06
+Avaliações finais / atividades de recuperação de avaliações: 29/06
 
 
 <p align="right">(<a href="#readme-top">início</a>)</p>
