@@ -63,7 +63,7 @@ Neste projeto, a turma vai:
 
 O projeto deve: 
 
-1. Ter alguma relação com a temática "grupo", com interpretação livre
+1. Oferecer a usuários alguma funcionalidade relacionada à temática "grupo", com interpretação livre
 
 2. Utilizar um framework em Java, preferencialmente libGDX e/ou Javalin (outros são possíveis para quem já tem experiência, mediante justificativa/validação)
 
@@ -107,7 +107,7 @@ Su Mo Tu We Th Fr Sa
 
 ### Desenvolvimento 
 
-- Para iniciar o desenvolvimento, é recomendável antes executar os exemplos fornecidos (libGDX e/ou Javalin)
+- Para iniciar o desenvolvimento, é **muito recomendável** executar antes os exemplos fornecidos (libGDX e/ou Javalin)
 
   - Com libGDX, é necessário **configurar o projeto para build web/html desde o início**!
 

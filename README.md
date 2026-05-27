@@ -393,7 +393,7 @@ Primeiro bimestre:
 Segundo bimestre:
 
 - Apresentação de exercícios (peso 2)
-- Projeto final de programação (peso 8): apresentações finais em ~~17~~ 22 e 24/06
+- [Projeto final de programação](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/25/README.md) (peso 8): apresentações finais em 22 e 24/06
 
 Avaliações finais / atividades de recuperação de avaliações: 29/06
 
