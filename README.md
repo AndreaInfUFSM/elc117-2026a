@@ -303,6 +303,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>Seg</td>
 <td><ul>
 <li><a href="https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/26/README.md">Programação concorrente e orientada a objetos.</a></li>
+<li>Apresentação de exercícios: <a href="https://github.com/elc117/apresentacao-bim2-2026a-caduoliveiradev">Carlos Eduardo</a>, <a href="https://github.com/elc117/apresentacao-bim2-2026a-Di889">Diógenes</a> e <a href="https://github.com/elc117/apresentacao-bim2-2026a-Eduarda-araujo19">Eduarda</a></li>
 </ul></td>
 </tr>
 
