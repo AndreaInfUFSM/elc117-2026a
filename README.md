@@ -330,6 +330,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>10/06/2026</td>
 <td>Qua</td>
 <td><ul>
+<li>-</li>
 </ul></td>
 </tr>
 
@@ -338,6 +339,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>15/06/2026</td>
 <td>Seg</td>
 <td><ul>
+<li>-</li>
 </ul></td>
 </tr>
 
@@ -346,6 +348,7 @@ Dinâmica de acolhimento da turma.</li>
 <td>17/06/2026</td>
 <td>Qua</td>
 <td><ul>
+<li>-</li>
 </ul></td>
 </tr>
 
@@ -359,7 +362,7 @@ Dinâmica de acolhimento da turma.</li>
 </tr>
 
 <tr>
-<td align="right">30</td>
+<td align="right">29</td>
 <td>24/06/2026</td>
 <td>Qua</td>
 <td><ul>
@@ -370,6 +373,24 @@ Dinâmica de acolhimento da turma.</li>
 <tr>
 <td align="right">-</td>
 <td>29/06/2026</td>
+<td>Seg</td>
+<td><ul>
+<li>-</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="right">30</td>
+<td>01/07/2026</td>
+<td>Qua</td>
+<td><ul>
+<li>Apresentações de trabalhos finais de programação.</li>
+</ul></td>
+</tr>
+
+<tr>
+<td align="right">-</td>
+<td>06/07/2026</td>
 <td>Seg</td>
 <td><ul>
 <li>Atividades de recuperação de avaliações.</li>
@@ -394,9 +415,9 @@ Primeiro bimestre:
 Segundo bimestre:
 
 - Apresentação de exercícios (peso 2)
-- [Projeto final de programação](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/25/README.md) (peso 8): apresentações finais em 22 e 24/06
+- [Projeto final de programação](https://liascript.github.io/course/?https://raw.githubusercontent.com/AndreaInfUFSM/elc117-2026a/main/classes/25/README.md) (peso 8): apresentações finais em 22/06, 24/06 e 01/07
 
-Avaliações finais / atividades de recuperação de avaliações: 29/06
+Avaliações finais / atividades de recuperação de avaliações: 06/07
 
 
 <p align="right">(<a href="#readme-top">início</a>)</p>
